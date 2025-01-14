@@ -62,7 +62,7 @@ add_action('wp_footer', 'sq_insert_js_in_footer', 10);
 
 // Load scripts as modules.
 add_filter('script_loader_tag', function (string $tag, string $handle, string $src) {
-    if (in_array($handle, ['vite', 'wordplate'])) {
+    if (in_array($handle, ['vite', 'pandoracase'])) {
         return '<script type="module" src="' . esc_url($src) . '" defer></script>';
     }
 
