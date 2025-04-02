@@ -1,0 +1,2 @@
+bg-<?= $section_background_color; ?> <?= $has_padding_top_removed ? ' has-padding-top-removed ' : '' ?> <?= $has_padding_bottom_removed ? ' has-margin-bottom-removed ' : '' ?>
+<?= $has_text_white ? ' has-text-white-on-bloc' : '' ?>

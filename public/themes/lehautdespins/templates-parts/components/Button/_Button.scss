@@ -1,0 +1,241 @@
+.Button {
+  @include classic-button;
+  & {
+    margin-block: $sixteenpx;
+  }
+  &.has-big-button {
+    @include big-button;
+  }
+  // Rétricit au survol
+  &.shrink-hover {
+    transition: transform 0.3s;
+    &:hover {
+      transform: scale(0.95);
+    }
+  }
+  // S'agrandit au survol
+  &.grow-hover {
+    transition: transform 0.3s;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  // Change de couleur au survol
+  &.background-shift-hover {
+    transition: background-color 0.3s, color 0.3s;
+    border: 2px solid transparent;
+    background-color: transparent;
+    // L'effet Hover est appliqué par le Mixin sur la classe .hover-color$
+  }
+  // Glisse vers le haut au survol
+  &.slide-up-hover {
+    transition: transform 0.3s;
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+  // Glisse vers le bas au survol
+  &.glowing-gradient-hover {
+    //transition: transform 0.3s;
+    background-position: 100%;
+    &:hover {
+      background: linear-gradient(
+        90deg,
+        //var(--info),
+        //var(--info)-light,
+        var(--info)-accent,
+        var(--info)-50,
+        var(--info),
+        var(--white),
+        var(--info),
+        var(--info)-50,
+        var(--info)-accent,
+        //var(--info)-light,
+        //var(--info)
+      );
+      background-size: 200%;
+      animation: glowing 2s forwards;
+      @keyframes glowing {
+        0% {
+          background-position: 0 0; // signifie 0 de la largeur de l'élément, 0 de la hauteur de l'élément.
+        }
+        100% {
+          background-position: 120% 0; // signifie 100% de la largeur de l'élément, 0 de la hauteur de l'élément.
+        }
+      }
+    }
+  }
+
+  // Effet Neon au survol
+  &.neon-button-hover {
+    //transition: transform 0.3s;
+    letter-spacing: 5px;
+    // border: 3px solid var(--info)-light;
+    background-color: transparent;
+    // color: var(--info)-light;
+    filter: drop-shadow(0 0 12px var(--info)-light)
+      drop-shadow(0 0 20px var(--info)-light) contrast(2) brightness(2);
+    &:hover {
+      // color: var(--white);
+      background-color: var(--info)-light;
+      filter: drop-shadow(0 0 20px var(--info)-light) contrast(2) brightness(2);
+    }
+  }
+
+  // Effet Liquide au survol
+  &.liquid-button-hover {
+    position: relative;
+    // background-color: #462e01; // Couleur café
+
+    transition: 1s all ease-in-out;
+    overflow: hidden;
+    color: var(--info);
+    border: 2px solid var(--info);
+    span {
+      position: relative;
+      z-index: 1;
+      color: var(--white);
+      text-shadow: 0.5px -0.5px 1px var(--info);
+      font-weight: 400;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      width: 400px;
+      height: 400px;
+      background-color: #ececec;
+      top: -365px;
+      left: -80px;
+      border-radius: 45%;
+      transition: 1.5s all ease-in-out;
+      animation: wave 10s infinite linear;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      width: 400px;
+      height: 400px;
+      background-color: #ececec80;
+      top: -355px;
+      left: -85px;
+      border-radius: 45%;
+      transition: 1.5s all ease-in-out;
+      animation: wave 9s infinite linear;
+    }
+
+    &:hover {
+      color: #fff;
+      &::before {
+        top: -450px;
+        transition: 1s all ease-in;
+      }
+      &::after {
+        top: -440px;
+        transition: 1s all ease-in;
+      }
+    }
+
+    &:active {
+      background-color: #462e01; // Couleur café
+    }
+  }
+
+  // Ajout de particules au survol
+  &.particle-button-hover {
+    position: relative;
+    padding: 0;
+    z-index: 2;
+
+    .true-button {
+      @include big-border-radius;
+      & {
+        margin: 0 !important;
+        position: relative;
+        transition: 0.3s ease-out;
+        box-shadow: 0 0 10px 0 var(--white);
+      }
+    }
+
+    .particle {
+      display: block;
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: -1;
+      height: $tenpx;
+      width: $tenpx;
+      top: 50%;
+      right: 25%;
+      transform: translate(-50%, -50%);
+      transition: 1s ease-in-out;
+      // Trouver comment mettre pause à l'animation des particules lorsqu'on est plus en hover
+      animation-play-state: paused;
+      animation-fill-mode: forwards;
+      &.left {
+        right: unset;
+        left: 25%;
+      }
+    }
+
+    &:hover {
+      .true-button {
+        box-shadow: 0 0 10px 0 var(--info);
+        transition: box-shadow 0.3s ease-in-out;
+      }
+
+      .particle {
+        opacity: 0.7;
+        // transition: 0.3s ease-in-out;
+        animation-play-state: running;
+        &.p1 {
+          top: 17%;
+          left: -15px;
+          animation: particle-p1 20s infinite;
+        }
+        &.p2 {
+          top: 10%;
+          left: 0;
+          width: $fivepx;
+          height: $fivepx;
+          animation: particle-p2 20s infinite;
+        }
+        &.p3 {
+          top: -5px;
+          right: 12px;
+          width: $ninepx;
+          height: $ninepx;
+          animation: particle-p3 20s infinite;
+          animation-delay: 0.7s;
+        }
+        &.p4 {
+          top: 85%;
+          right: -15px;
+          width: $fivepx;
+          height: $fivepx;
+          animation: particle-p1 20s infinite;
+        }
+        &.p5 {
+          top: 100%;
+          right: -5px;
+          opacity: 0.85;
+          animation: particle-p3 20s infinite;
+        }
+        &.p6 {
+          top: 110%;
+          left: 17%;
+          width: $eightpx;
+          height: $eightpx;
+          opacity: 0.9;
+          animation: particle-p2 20s infinite;
+        }
+        &.p7 {
+          top: 115%;
+          left: 24%;
+          width: $sevenpx;
+          height: $sevenpx;
+          animation: particle-p1 20s infinite;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,208 @@
+@use "variables";
+
+// Petit effet de rebondissement (Page Accueil Tracklock / Icones du bas)
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-20px);
+  }
+
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scrolling-band {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(calc(-100vw - 1040px));
+  }
+}
+
+@keyframes scrolling-tags {
+  from {
+    left: 0;
+  }
+  to {
+    left: -50%;
+  }
+}
+
+@keyframes showButton {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInEffect {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+// POUR HALLOWEEN : SPIDER
+// Faire monter et descendre l'araignée :
+@keyframes spider-up-down {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY($hundredpx);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+// Faire bouger l'araignée de gauche à droite :
+@keyframes spider-shuffle {
+  0% {
+    rotate: 0;
+  }
+  25% {
+    rotate: 10px;
+  }
+  50% {
+    rotate: -10px;
+  }
+  75% {
+    rotate: 5px;
+  }
+  90% {
+    rotate: -5px;
+  }
+  100% {
+    rotate: 0;
+  }
+}
+
+// Faire bouger les pattes gauches de l'araignée :
+@keyframes spider-legs-left-move {
+  0% {
+    transform: skewX(-20deg) rotate(0deg);
+  }
+  25% {
+    transform: skewX(-20deg) rotate(-17deg);
+  }
+  50% {
+    transform: skewX(-20deg) rotate(0deg);
+  }
+  75% {
+    transform: skewX(-20deg) rotate(25deg);
+  }
+  100% {
+    transform: skewX(-20deg) rotate(0deg);
+  }
+}
+
+// Faire bouger les pattes droites de l'araignée :
+@keyframes spider-legs-right-move {
+  0% {
+    transform: skewX(20deg) rotate(0deg);
+  }
+  25% {
+    transform: skewX(20deg) rotate(17deg);
+  }
+  50% {
+    transform: skewX(20deg) rotate(0deg);
+  }
+  75% {
+    transform: skewX(20deg) rotate(-25deg);
+  }
+  100% {
+    transform: skewX(20deg) rotate(0deg);
+  }
+}
+
+// ANIMATION DES PARTICULES DU BOUTON
+// Particle Animations
+@keyframes particle-p1 {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+  12% {
+    transform: translate(3px, 1px);
+  }
+  24% {
+    transform: translate(-2px, 3px);
+  }
+  37% {
+    transform: translate(2px, -2px);
+  }
+  55% {
+    transform: translate(-1px, 0);
+  }
+  74% {
+    transform: translate(0, 2px);
+  }
+  88% {
+    transform: translate(-3px, -1px);
+  }
+}
+
+@keyframes particle-p2 {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+
+  74% {
+    transform: translate(2px, 0);
+  }
+  88% {
+    transform: translate(2px, 3px);
+  }
+}
+
+@keyframes particle-p3 {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+  12% {
+    transform: translate(-1px, 3px);
+  }
+  24% {
+    transform: translate(3px, -2px);
+  }
+  37% {
+    transform: translate(-2px, 2px);
+  }
+  55% {
+    transform: translate(0, -1px);
+  }
+  74% {
+    transform: translate(-2px, 0);
+  }
+  88% {
+    transform: translate(1px, -3px);
+  }
+}

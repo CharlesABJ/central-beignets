@@ -1,0 +1,200 @@
+// =====================================
+// STYLE DU COMPOSANT MEDIA | COMPONENT MEDIA STYLE
+// =====================================
+
+.Media {
+  position: relative;
+  display: block;
+  // width: fit-content;
+  .media-content {
+    video,
+    iframe,
+    .media-link {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    &.media-height {
+      // default : Affichage par défaut
+      // has-raw-height : Affichée(s) sous forme réelle
+      // has-like-portrait : Affichée(s) sous forme de portrait
+      // has-square-shape : Affichée(s) sous forme de carré
+      &.default {
+        aspect-ratio: 16 / 9;
+      }
+      &.has-raw-height {
+        height: auto;
+        object-fit: contain;
+      }
+      &.has-like-portrait {
+        aspect-ratio: 3/4;
+        img {
+          object-position: top;
+        }
+      }
+      &.has-square-shape {
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+      }
+    }
+    &.media-has-text-height {
+      position: absolute;
+      height: 100%;
+    }
+
+    // Si le type de média est une vidéo
+    &.video {
+    }
+
+    // Si le type de média est un audio
+    &.audio {
+    }
+  }
+  .media-legend {
+    &.legend-outside-media {
+      margin-block: $tenpx;
+      &.bottom-left {
+        text-align: left;
+      }
+      &.bottom-center {
+        text-align: center;
+      }
+      &.bottom-right {
+        text-align: right;
+      }
+    }
+
+    &.legend-on-media {
+      background-color: var(--info)-50;
+      color: var(--white)-light;
+      padding: $fourpx $tenpx;
+      position: absolute;
+
+      &.bottom-left {
+        bottom: 0;
+        left: 0;
+      }
+      &.bottom-center {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &.bottom-right {
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+
+  &.design {
+    // design none : Aucune
+    // design border-radius : Bordures arrondies
+    &.none {
+      .media-content {
+        // Rien, j'écris pour la forme
+      }
+    }
+    &.border-radius {
+      .media-content {
+        border-radius: $fivepx;
+        overflow: hidden;
+      }
+    }
+  }
+  &.animation {
+    // animation none : Aucune
+    // animation scrolling-effect : Effet de scroll au survol
+    // animation fill-top-right-corner-on-hover : Remplir l’angle en haut à droite au survol
+    // animation fill-corners-on-hover : Remplir les angles au survol
+    // animation round-corners-on-hover : Arrondir les angles au survol
+    // animation black-and-white-image-on-hover : Image en noir et blanc au survol
+    // animation color-image-on-hover : Image colorée au survol
+    // animation add-shadow-on-hover : Ajout d’une ombre au survol
+    // animation darken-image-on-hover : Assombrir l'image au survol
+    // animation lighten-image-on-hover : Éclaircir l'image au survol
+    // animation zoom-on-hover : Zoomer l'image au survol
+    // animation zoom-out-on-hover : Dézoomer l'image au survol
+
+    .media-content {
+      transition: 0.3s ease-in-out;
+    }
+    &.none {
+      .media-content {
+        // Rien, j'écris pour la forme
+      }
+    }
+    &.scrolling-effect {
+      .media-content {
+        @include scrolling-effect;
+      }
+    }
+    &.fill-top-right-corner-on-hover {
+      .media-content {
+        @include fill-top-right-corner-on-hover;
+      }
+    }
+    &.fill-corners-on-hover {
+      .media-content {
+        @include fill-corners-on-hover;
+      }
+    }
+    &.round-corners-on-hover {
+      .media-content {
+        @include round-corners-on-hover;
+      }
+    }
+    &.black-and-white-image-on-hover {
+      .media-content {
+        @include black-and-white-image-on-hover;
+      }
+    }
+    &.color-image-on-hover {
+      .media-content {
+        @include color-image-on-hover;
+      }
+    }
+    &.add-shadow-on-hover {
+      .media-content {
+        @include add-shadow-on-hover;
+      }
+    }
+    &.darken-image-on-hover {
+      .media-content {
+        @include darken-image-on-hover;
+      }
+    }
+    &.lighten-image-on-hover {
+      .media-content {
+        @include lighten-image-on-hover;
+      }
+    }
+    &.zoom-on-hover {
+      .media-content {
+        @include zoom-on-hover;
+      }
+    }
+    &.zoom-out-on-hover {
+      .media-content {
+        @include zoom-out-on-hover;
+      }
+    }
+  }
+}
+
+// =====================================
+// RESPONSIVE | MEDIAS QUERIES
+// =====================================
+
+// Mode PC Classique (1640px) | Classic PC Mode (1640px)
+@media screen and (max-width: 1640px) {
+}
+
+// Mode Tablette (1250px) | Tablet Mode (1250px)
+@media screen and (max-width: 1250px) {
+}
+
+// Mode Mobile (768px) | Mobile Mode (768px)
+@media screen and (max-width: 768px) {
+  .Media {
+  }
+}

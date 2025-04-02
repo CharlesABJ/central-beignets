@@ -7,7 +7,7 @@ require __DIR__ . '/../vendor/autoload.php';
 use Dotenv\Dotenv;
 use Symfony\Component\HttpFoundation\Request;
 
-// Load the environment variables.
+// Load the environment 
 Dotenv::createImmutable(realpath(__DIR__ . '/../'))->safeLoad();
 
 // Set the environment type.

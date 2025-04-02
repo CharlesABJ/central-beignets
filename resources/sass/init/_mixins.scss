@@ -1,0 +1,425 @@
+@mixin classic-body-font-size {
+  font-size: $sixteenpx;
+  @media screen and (max-width: 1640px) {
+    font-size: $sixteenpx;
+  }
+  @media screen and (max-width: 1250px) {
+  }
+  @media screen and (max-width: 678px) {
+  }
+}
+
+@mixin classic-body {
+  @include classic-body-font-size;
+  background: var(--body-bg-color);
+  color: var(--body-text-color);
+}
+
+@mixin classic-section {
+  padding-block: $hundredpx;
+}
+@mixin classic-h1-font-size {
+  font-size: $sixtypx;
+  @media screen and (max-width: 1640px) {
+    font-size: $sixtypx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: calc($thirty-twopx - $twopx);
+  }
+  @media screen and (max-width: 678px) {
+    font-size: calc($twenty-fivepx - $twopx);
+  }
+}
+
+@mixin classic-label-font-size {
+  font-size: $twenty-threepx;
+  @media screen and (max-width: 1640px) {
+    font-size: $twentypx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $twentypx;
+  }
+  @media screen and (max-width: 678px) {
+  }
+}
+@mixin classic-label {
+  @include classic-label-font-size;
+  font-weight: $weight-thin;
+  text-transform: uppercase;
+}
+
+@mixin big-label-font-size {
+  font-size: $fourtypx;
+  @media screen and (max-width: 1640px) {
+    font-size: $fourtypx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $thirtypx;
+  }
+  @media screen and (max-width: 678px) {
+  }
+}
+@mixin big-label {
+  @include big-label-font-size;
+  font-weight: $weight-light;
+  text-transform: uppercase;
+}
+
+@mixin classic-h1 {
+  @include classic-h1-font-size;
+  line-height: 56px;
+  font-weight: $weight-bold;
+  text-transform: uppercase;
+}
+
+@mixin alternative-h1-font-size {
+  font-size: $thirty-fourpx;
+  @media screen and (max-width: 1640px) {
+    font-size: $thirty-fourpx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $twenty-fivepx;
+  }
+  @media screen and (max-width: 678px) {
+  }
+}
+@mixin alternative-h1 {
+  @include alternative-h1-font-size;
+  line-height: 38px;
+  font-weight: $weight-bold;
+}
+
+@mixin classic-h1-illustration {
+}
+
+//========================================================================
+@mixin classic-h2-font-size {
+  font-size: $thirty-sixpx;
+  @media screen and (max-width: 1640px) {
+    font-size: $thirty-sixpx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $twenty-fivepx;
+  }
+  @media screen and (max-width: 678px) {
+  }
+}
+@mixin classic-h2 {
+  @include classic-h2-font-size;
+  line-height: 32px;
+  font-weight: $weight-bold;
+  margin-block: $sixteenpx;
+  text-transform: uppercase;
+}
+
+@mixin alternative-h2-font-size {
+  font-size: $fiftypx;
+  @media screen and (max-width: 1640px) {
+    font-size: $fiftypx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $thirtypx;
+  }
+  @media screen and (max-width: 678px) {
+  }
+}
+
+@mixin alternative-h2 {
+  @include alternative-h2-font-size;
+  line-height: 64px;
+  font-weight: $weight-bold;
+  margin-block: $sixteenpx;
+  text-transform: uppercase;
+}
+
+@mixin big-h2-font-size {
+  font-size: $sixtypx;
+  @media screen and (max-width: 1640px) {
+    font-size: $sixtypx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $thirtypx;
+  }
+  @media screen and (max-width: 678px) {
+  }
+}
+
+@mixin big-h2 {
+  @include big-h2-font-size;
+  line-height: 32px;
+  font-weight: $weight-bold;
+  margin-block: $sixteenpx;
+  text-transform: uppercase;
+}
+
+@mixin classic-h2-illustration() {
+}
+//========================================================================
+@mixin classic-h3-font-size {
+  font-size: $twentypx;
+  @media screen and (max-width: 1640px) {
+    font-size: $twentypx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $twentypx;
+  }
+  @media screen and (max-width: 678px) {
+  }
+}
+@mixin classic-h3 {
+  @include classic-h3-font-size;
+  line-height: 32px;
+  font-weight: $weight-semibold;
+  text-transform: uppercase;
+}
+
+@mixin classic-alternative-font-size {
+  font-size: $twentypx;
+  @media screen and (max-width: 1640px) {
+    font-size: $twentypx;
+  }
+  @media screen and (max-width: 1250px) {
+  }
+  @media screen and (max-width: 678px) {
+  }
+}
+@mixin classic-alternative {
+  @include classic-alternative-font-size;
+  line-height: 24px;
+}
+
+@mixin big-alternative-font-size {
+  font-size: $thirty-twopx;
+  @media screen and (max-width: 1640px) {
+    font-size: $thirtypx;
+  }
+  @media screen and (max-width: 1250px) {
+  }
+  @media screen and (max-width: 678px) {
+  }
+}
+@mixin big-alternative {
+  @include big-alternative-font-size;
+  line-height: 32px;
+}
+
+@mixin classic-container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1920px;
+  @media screen and (max-width: 1640px) {
+    max-width: 1700px;
+  }
+  @media screen and (max-width: 1250px) {
+    max-width: 100%;
+  }
+  @media screen and (max-width: 678px) {
+  }
+}
+
+@mixin alternative-section-padding {
+  padding: 0 calc($hundredpx + $fourtypx);
+}
+
+@mixin classic-apply-color($type, $color-name, $color) {
+  .#{$type}-#{$color-name} {
+    @if $type == "bg" {
+      background-color: $color;
+      @if (
+        $color-name ==
+          "black" or
+          $color-name ==
+          "color1" or
+          $color-name ==
+          "color1-light" or
+          $color-name ==
+          "color4"
+      ) {
+        color: var(--white);
+      }
+    }
+  }
+}
+
+@mixin classic-grid($columns: 4, $gap: $thirty-twopx) {
+  display: grid;
+}
+
+@mixin classic-header-logo-font-size {
+  font-size: $twentypx;
+  @media screen and (max-width: 1640px) {
+    font-size: $twentypx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $twentypx;
+  }
+  @media screen and (max-width: 678px) {
+  }
+}
+@mixin classic-header-logo {
+  @include classic-header-logo-font-size;
+  font-weight: $weight-bold;
+}
+
+@mixin classic-header-nav-font-size {
+  font-size: $sixteenpx;
+  @media screen and (max-width: 1640px) {
+    font-size: $sixteenpx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $sixteenpx;
+  }
+  @media screen and (max-width: 678px) {
+  }
+}
+
+@mixin classic-header-nav {
+  @include classic-header-nav-font-size;
+}
+
+@mixin classic-tag-font-size {
+  font-size: $fourteenpx;
+  @media screen and (max-width: 1640px) {
+    font-size: $fourteenpx;
+  }
+  @media screen and (max-width: 1250px) {
+  }
+  @media screen and (max-width: 678px) {
+  }
+}
+
+@mixin classic-tag {
+  @include classic-tag-font-size;
+  padding: $fourpx $twelvepx;
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  border-radius: $hundredpx;
+  font-weight: $weight-medium;
+  background: var(--grey-1);
+  color: var(--black);
+  user-select: none;
+}
+
+@mixin classic-item {
+  display: flex;
+  background: var(--white);
+  padding: $twenty-fourpx;
+  border-radius: $twelvepx;
+  box-shadow: $shadow;
+  transition: 0.3s ease-in-out;
+}
+
+@mixin classic-avatar {
+  border-radius: 50%;
+  overflow: hidden;
+  width: $fourtypx;
+  height: $fourtypx;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+}
+
+@mixin classic-limited-text($maxLine: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $maxLine; // Limite le texte à $maxLine lignes
+  -webkit-box-orient: vertical; // Orientation verticale
+}
+
+@mixin classic-input {
+  .label-title {
+    display: flex;
+    font-size: small;
+    cursor: pointer;
+  }
+  .input-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: $eightpx;
+
+    .icon {
+      // Icon
+      position: absolute;
+      width: $sixteenpx;
+      top: 50%;
+      left: $sixteenpx;
+      transform: translateY(-50%);
+      color: var(--grey-1);
+    }
+  }
+  input,
+  &.submit-button {
+    width: 100%;
+    background: unset;
+    padding: $fourteenpx $thirty-eightpx;
+    border: 1px solid var(--border-color);
+    border-radius: $eightpx;
+    &:focus-visible {
+      outline: 2px solid var(--grey-2);
+      outline-offset: 2px;
+    }
+    &[disabled] {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+@mixin classic-auto-grid($desktop-columns, $tablet-columns, $mobile-columns) {
+  display: grid;
+  grid-template-columns: repeat($desktop-columns, minmax(0, 1fr));
+  @media screen and (max-width: 1250px) {
+    grid-template-columns: repeat($tablet-columns, minmax(0, 1fr));
+  }
+  @media screen and (max-width: 678px) {
+    grid-template-columns: repeat($mobile-columns, minmax(0, 1fr));
+  }
+}
+
+@mixin section-margin-inline {
+}
+
+@mixin section-margin-block {
+}
+
+@mixin section-padding-inline {
+  padding-inline: calc(2 * $hundredpx + $twenty-sixpx);
+  @media screen and (max-width: 1640px) {
+    padding-inline: calc($hundredpx + $fourtypx);
+  }
+  @media screen and (max-width: 1250px) {
+    padding-inline: calc($hundredpx + $fourtypx);
+  }
+  @media screen and (max-width: 678px) {
+    padding-inline: calc($hundredpx + $fourtypx);
+  }
+}
+@mixin section-padding-block {
+  padding-block: $hundredpx;
+  @media screen and (max-width: 1640px) {
+    padding-block: $hundredpx;
+  }
+  @media screen and (max-width: 1250px) {
+    padding-block: $hundredpx;
+  }
+  @media screen and (max-width: 678px) {
+    padding-block: $hundredpx;
+  }
+}
+
+@mixin classic-shadow {
+}
+
+@mixin big-radius($radius: $eightypx) {
+  border-radius: $radius;
+  @media screen and (max-width: 1640px) {
+    border-radius: $radius;
+  }
+  @media screen and (max-width: 1250px) {
+    border-radius: $fiftypx;
+  }
+  @media screen and (max-width: 678px) {
+    border-radius: $fiftypx;
+  }
+}

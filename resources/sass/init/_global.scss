@@ -1,0 +1,898 @@
+// Génération des classes pour background
+@each $color-name in $color-name-list {
+  .bg-#{$color-name} {
+    background-color: var(--#{$color-name});
+  }
+}
+
+// Génération des classes pour le texte
+@each $color-name in $color-name-list {
+  .text-#{$color-name} {
+    color: var(--#{$color-name});
+  }
+}
+
+// Génération des classes pour border
+@each $color-name in $color-name-list {
+  .border-#{$color-name} {
+    border-color: var(--#{$color-name});
+  }
+}
+
+// ========================
+// BODY STYLE
+// ========================
+body {
+  @include classic-body;
+  > main {
+    min-height: 60vh;
+    > section {
+      .container-zone {
+        @include section-padding-inline;
+        @include section-padding-block;
+      }
+    }
+  }
+  > main section,
+  > header,
+  > footer {
+    .container-zone {
+      @include classic-container;
+    }
+  }
+}
+
+// ========================
+// MAIN STYLE
+// ========================
+body {
+  > main {
+    position: relative;
+    background-color: var(--white);
+    min-height: 77vh;
+
+    &.main-hidden {
+      display: none !important;
+    }
+  }
+}
+
+// ========================
+// SECTION STYLE
+// ========================
+section {
+  &.has-section-illustration {
+    position: relative;
+    .section-illustration {
+      position: absolute;
+      height: 100%;
+      right: 0;
+      top: 0;
+      z-index: 1;
+    }
+  }
+
+  &.has-title {
+    h2 {
+      &.has-title-illustration {
+        .title-illustration {
+          width: $seventypx;
+        }
+      }
+    }
+  }
+
+  > .description {
+    margin-bottom: $fourtypx;
+  }
+
+  // Appliquer le texte en blanc par défaut
+  &.has-text-white-on-bloc {
+    p,
+    li,
+    span {
+      color: var(--white);
+    }
+  }
+  &.section-hidden {
+    display: none !important;
+  }
+}
+
+// ========================
+// H1 STYLE
+// ========================
+h1 {
+  @include classic-h1;
+
+  p {
+    line-height: inherit;
+  }
+
+  p,
+  span {
+    font-size: inherit;
+    letter-spacing: inherit;
+  }
+
+  &.has-title-label {
+    .label {
+      @include classic-body-font-size;
+
+      & {
+        display: block;
+        text-transform: inherit;
+        margin-bottom: $tenpx;
+      }
+    }
+  }
+
+  &.has-title-illustration {
+    .title-illustration {
+      &.colored-bar {
+        @include classic-h1-illustration;
+      }
+    }
+  }
+}
+
+// ========================
+// H2 STYLE
+// ========================
+h2 {
+  @include classic-h2;
+
+  .illustration {
+    display: block;
+    width: max-content;
+    margin-bottom: $thirty-twopx;
+  }
+  .title {
+    //margin-left: $tenpx;
+  }
+  p {
+    line-height: inherit;
+  }
+
+  p,
+  span {
+    font-size: inherit;
+    letter-spacing: inherit;
+  }
+
+  &.has-title-label {
+    .label {
+      @include classic-body-font-size;
+      & {
+        display: block;
+        font-weight: $weight-regular;
+        text-transform: inherit;
+        margin-bottom: $tenpx;
+      }
+    }
+  }
+
+  &.has-title-illustration {
+    &.classic-icon {
+      .illustration {
+        @include classic-h2-illustration;
+      }
+    }
+  }
+  // &::before {
+  //   position: absolute;
+  //   content: "";
+  //   display: block;
+  //   width: 0.7rem;
+  //   height: 0.7rem;
+  //   border-radius: 50%;
+  //   border: 2px solid var(--blue);
+  //   top: 0.5rem;
+  //   right: -0.7rem;
+  // }
+
+  // &::after {
+  //   position: absolute;
+  //   content: "";
+  //   display: block;
+  //   width: 1rem;
+  //   height: 1rem;
+  //   border-radius: 50%;
+  //   border: 2px solid var(--blue);
+  //   top: 0;
+  //   right: -1.7rem;
+  // }
+}
+
+// ========================
+// H3 STYLE
+// ========================
+h3 {
+  @include classic-h3;
+
+  p {
+    line-height: inherit;
+  }
+
+  p,
+  span {
+    font-size: inherit;
+    letter-spacing: inherit;
+  }
+}
+
+// ========================
+// ANCRE STYLE
+// ========================
+a {
+  color: inherit;
+  transition: 0.3s;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// ========================
+// LISTE STYLE (UL & LI)
+// ========================
+ul {
+  padding-left: 2rem;
+  li {
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      width: $fifteenpx;
+      height: $fifteenpx;
+      left: -($twenty-eightpx);
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      background-color: var(--info);
+    }
+  }
+
+  &.classic-list {
+    margin-left: $twenty-fivepx;
+    li {
+      &::before {
+        content: "•";
+        height: max-content;
+        width: max-content;
+        background: unset;
+      }
+    }
+  }
+  &.has-not-ul-style, // Pour retirer le style par défaut des ul
+  .sub-menu // Pour les sous-menus du header
+  {
+    padding: 0;
+    margin: 0;
+
+    > li {
+      &::before {
+        all: unset; // Pour tout remettre à zéro
+      }
+    }
+  }
+}
+
+// =====================================
+// MEDIAS STYLE // ( Style des médias )
+// =====================================
+
+.media-is-left {
+  margin-right: auto;
+  @media screen and (max-width: 768px) {
+    margin-right: unset;
+    width: 100% !important;
+  }
+}
+.media-is-right {
+  margin-left: auto;
+  @media screen and (max-width: 768px) {
+    margin-left: unset;
+    width: 100% !important;
+  }
+}
+.media-is-center {
+  margin-inline: auto;
+  @media screen and (max-width: 768px) {
+    margin-inline: unset;
+    width: 100% !important;
+  }
+}
+
+// ========================
+// BUTTON STYLE // ( Style des boutons )
+// ========================
+
+.buttons-zone {
+  display: flex;
+  gap: $twenty-twopx;
+  &.buttons-emplacement {
+    &.left {
+      justify-content: flex-start;
+    }
+    &.center {
+      justify-content: center;
+    }
+    &.right {
+      justify-content: flex-end;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &.buttons-emplacement {
+      &.left,
+      &.center,
+      &.right {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+// ===================================================
+// BACKGROUND + TEXT + BORDER COLOR + UNDERLINE COLOR
+// ===================================================
+
+// ========================
+// ILUSTRATION STYLE // ( Style des illustrations )
+// ========================
+// Couleur des illustrations :
+@mixin illustration-color($color, $color-name) {
+  .illustration-#{$color-name} {
+    svg {
+      path {
+        fill: $color !important;
+      }
+    }
+    &.icon {
+      svg {
+        path {
+          transition: 0.3s ease;
+        }
+      }
+    }
+  }
+}
+
+// ========================
+// ARROWS CAROUSEL STYLE // ( Changer le style des flèches des carrousels )
+// ========================
+.navigation {
+  height: calc($twenty-twopx * 2);
+  width: calc($twenty-twopx * 4);
+  bottom: -($tenpx);
+  display: flex;
+  z-index: 3;
+  .nav-btn {
+    height: 100%;
+    top: 0;
+    margin: 0;
+    transition: 0.2s;
+    cursor: pointer;
+
+    &::after {
+      color: var(--info);
+    }
+    &.swiper-button-prev {
+      left: 0;
+      width: 50%;
+      border-radius: 5px 0 0 5px;
+    }
+    &.swiper-button-next {
+      right: 0;
+      width: 50%;
+      border-radius: 0 5px 5px 0;
+    }
+
+    // @mixin nav-btn-bg-color($color, $color-name) {
+    //   &.nav-btn-bg-#{$color-name} {
+    //     background-color: $color;
+    //     &:hover {
+    //       background-color: lighten($color, 10%);
+    //     }
+    //     &:active {
+    //       background-color: darken($color, 10%);
+    //     }
+    //   }
+    // }
+
+    // // Bouton bleu
+    // @include nav-btn-bg-color(var(--blue), "color1");
+    // // Bouton bleu pâle
+    // @include nav-btn-bg-color(var(--blue)-light, "color1-light");
+    // // Bouton vert
+    // @include nav-btn-bg-color($color2, "color2");
+    // // Bouton vert pâle
+    // @include nav-btn-bg-color($color2-light, "color2-light");
+    // // Bouton rouge
+    // @include nav-btn-bg-color($color3, "color3");
+    // // Bouton rouge pâle
+    // @include nav-btn-bg-color($color3-light, "color3-light");
+    // // Bouton noir
+    // @include nav-btn-bg-color($color4, "color4");
+    // // Bouton noir pâle
+    // @include nav-btn-bg-color($color4-light, "color4-light");
+    // // Bouton blanc
+    // @include nav-btn-bg-color(var(--info), "color5");
+  }
+}
+
+// ========================
+// BLOCS DIVISION // ( Diviser les blocs en plusieurs colonnes )
+// ========================
+.has-five-columns {
+  @include classic-grid(5);
+}
+
+.has-four-columns {
+  @include classic-grid(4);
+}
+
+.has-three-columns {
+  @include classic-grid(3);
+}
+.has-two-columns {
+  @include classic-grid(2);
+  &.align-item-start {
+    align-items: flex-start;
+  }
+  &.align-item-center {
+    align-items: center;
+  }
+  &.align-item-end {
+    align-items: flex-end;
+  }
+}
+.has-two-columns-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  > div {
+    width: 48%;
+  }
+}
+
+.has-one-columns,
+.has-one-column {
+  @include classic-grid(1);
+}
+
+// ========================
+// BLOC GRID DEDEPENDING ON THE NUMBER OF ELEMENTS // ( Diviser les blocs en plusieurs colonnes en fonction du nombre d'éléments )
+$nb-items-array: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+// @each $nb-items in $nb-items-array {
+//   @include classic-auto-grid($nb-items);
+// }
+
+// ========================
+// BLOC EMPLACEMENT ( Changer l'emplacement des blocs ) :
+// ========================
+.reverse-positions {
+  &.horizontal-reverse {
+    direction: rtl; // Pour inverser l'ordre d'affichage des blocs horizontalement ( de droite à gauche )
+    > div {
+      direction: ltr; // Pour remettre l'ordre d'affichage du contenu des blocs horizontalement ( de gauche à droite )
+    }
+  }
+
+  &.vertical-reverse {
+    flex-direction: column-reverse;
+  }
+}
+
+// ========================
+// TITLE EMPLACEMENT ( Changer l'emplacement des titres ) :
+// ========================
+.title-emplacement {
+  display: flex;
+  width: 100%;
+  &.title-is-left {
+    justify-content: flex-start;
+  }
+  &.title-is-right {
+    justify-content: flex-end;
+  }
+  &.title-is-center {
+    justify-content: center;
+    .title {
+      margin-left: 0;
+    }
+  }
+}
+
+// ========================
+// IMAGE EMPLACEMENT ( Changer l'emplacement des images ) :
+.image-emplacement {
+  width: 85%;
+  &.img-is-left {
+    margin-right: auto;
+  }
+  &.img-is-right {
+    margin-left: auto;
+  }
+  &.img-is-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// ========================
+// ELEMENTS À FAIRE APPARAITRE OU DISPARAITRE EN FONCTION DE L'ÉCRAN :
+// ========================
+.hidden-for-mobile {
+  display: flex !important;
+}
+.hidden-for-tablet {
+  display: flex !important;
+}
+.display-for-mobile {
+  display: none !important;
+}
+.display-for-tablet {
+  display: none !important;
+}
+
+// ========================
+// MESSAGE D'ALERTE && D'ERREUR
+// ========================
+.no-results,
+.alert {
+  margin: auto;
+  color: var(--warning);
+  width: max-content;
+  // padding-bottom: $classic-h2-margin;
+  text-align: center;
+}
+.alert {
+  background-color: var(--error);
+  color: var(--white);
+  padding: $fifteenpx;
+  border-radius: $tenpx;
+}
+
+// ===================================
+// OTHER STYLES // ( Autres styles )
+// ==================================
+
+.header-banner-separator {
+  @include section-margin-inline;
+  @include section-margin-block;
+  & {
+    height: 2px;
+  }
+}
+
+// Delete margin-top
+.has-margin-top-removed {
+  margin-top: 1rem !important;
+}
+// Delete margin-bottom
+.has-margin-bottom-removed {
+  margin-bottom: 1rem !important;
+}
+// Delete padding-top
+.has-padding-top-removed {
+  padding-top: 1rem !important;
+}
+// Delete padding-bottom
+.has-padding-bottom-removed {
+  padding-bottom: 1rem !important;
+}
+
+// For Mixitup
+
+.archive-classic-template.traders {
+  .mix-hidden {
+    display: block !important;
+    pointer-events: none;
+    opacity: 0.1;
+    filter: brightness(0.5);
+    user-select: none;
+    transition: 0.3s ease-in-out;
+  }
+  @media screen and (max-width: 678px) {
+    .mix-hidden {
+      display: none !important;
+    }
+  }
+}
+
+.has-like-cards {
+  @include classic-shadow;
+}
+
+.limited-text {
+  @include classic-limited-text;
+  p {
+    @include classic-limited-text;
+  }
+}
+// Carousel
+.swiper-carousel {
+  position: relative;
+}
+.swiper-pagination {
+  width: max-content !important;
+  margin-top: 2rem;
+  margin-inline: auto;
+  display: flex;
+  // max-width: 120px;
+  flex-wrap: wrap;
+  gap: $tenpx 0;
+  & {
+    position: relative;
+    padding-top: $twelvepx;
+  }
+  .swiper-pagination-bullet {
+    width: $twelvepx;
+    height: $twelvepx;
+    &:not(.swiper-pagination-bullet-active) {
+      opacity: 0.2;
+    }
+  }
+}
+
+// Accessibilité
+*:focus-visible {
+  // contour de focus uniquement pour la navigation au clavier - pas utile sur ce site SQ
+  // border: 1px solid var(--info)-light !important;
+  // box-shadow: 0 0 8px var(--info)-50 !important;
+  // outline: 1px solid transparent !important;
+}
+
+// Reponses contact form
+.wpcf7 {
+  form.invalid {
+    .wpcf7-response-output {
+      border-color: var(--error);
+      color: var(--error);
+    }
+  }
+
+  form.sent {
+    .wpcf7-response-output {
+      border-color: var(--success);
+      color: var(--success);
+    }
+  }
+}
+
+// ========================================================================================================================
+//                                                MEDIA QUERIES ( RESPONSIVE )
+// ========================================================================================================================
+// Desktop
+@media screen and (max-width: 1640px) {
+  // ========================
+  // ARROWS CAROUSEL STYLE // ( Changer le style des flèches des carrousels )
+  // ========================
+  .navigation {
+    height: calc($twentypx * 2);
+    width: calc($twentypx * 4);
+  }
+}
+
+// Responsive Mode tablette
+@media screen and (max-width: 1250px) {
+  // ========================
+  // H2 STYLE
+  // ========================
+  h2,
+  legend {
+    p {
+      width: 100%;
+    }
+  }
+
+  // ========================
+  // ARROWS CAROUSEL STYLE // ( Changer le style des flèches des carrousels )
+  // ========================
+  .navigation {
+    height: calc($twentypx * 2.5);
+    width: calc($twentypx * 4.5);
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      font-size: $twenty-twopx;
+    }
+  }
+
+  // ========================
+  // LISTE STYLE (UL & LI)
+  // ========================
+  ul {
+    li {
+      &::before {
+        width: $twelvepx;
+        height: $twelvepx;
+      }
+    }
+  }
+
+  // ========================
+  // ELEMENTS À FAIRE APPARAITRE OU DISPARAITRE EN FONCTION DE L'ÉCRAN :
+  // ========================
+  .hidden-for-tablet {
+    display: none !important;
+  }
+  .display-for-tablet {
+    display: flex !important;
+  }
+
+  // ========================
+  // MESSAGE D'ALERTE && D'ERREUR
+  // ========================
+  .no-results,
+  .alert {
+    @include classic-h2-font-size;
+
+    width: 100%;
+  }
+}
+
+// Responsive Mode mobile
+@media screen and (max-width: 768px) {
+  // ========================
+  // MAIN STYLE
+  // ========================
+  body {
+    > main {
+      .main-container {
+        padding-inline: $sixteenpx;
+      }
+    }
+  }
+
+  // ========================
+  // SECTION STYLE
+  // ========================
+  section,
+  .woocommerce {
+    &.has-section-illustration {
+      padding-top: 2rem;
+      .section-illustration {
+        display: none;
+      }
+    }
+  }
+
+  // ========================
+  // LISTE STYLE (UL & LI)
+  // ========================
+  ul {
+    li {
+      &::before {
+        width: $tenpx;
+        height: $tenpx;
+        left: -($twentypx);
+      }
+    }
+  }
+
+  // ========================
+  // BUTTON STYLE // ( Style des boutons )
+  // ========================
+
+  .button {
+    &:first-of-type {
+      // margin-top: $thirtypx;
+    }
+    &.big {
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+  }
+
+  // ========================
+  // IMAGE EMPLACEMENT ( Changer l'emplacement des images ) :
+  .image-emplacement {
+    width: 100%;
+    .img-is-left,
+    .img-is-right,
+    .img-is-center {
+      margin: unset;
+    }
+  }
+
+  // ========================
+  // ARROWS CAROUSEL STYLE // ( Changer le style des flèches des carrousels )
+  // ========================
+  // .navigation {
+  //   height: calc($twentypx * 1.5);
+  //   width: calc($twentypx * 2.5);
+  //   .swiper-button-next:after,
+  //   .swiper-button-prev:after {
+  //     font-size: $sixteenpx;
+  //   }
+  // }
+
+  // ========================
+  // TITLE EMPLACEMENT ( Changer l'emplacement des titres ) :
+  // ========================
+  .title-emplacement {
+    &.title-is-right {
+      justify-content: flex-start;
+    }
+  }
+
+  // ========================
+  // ELEMENTS À FAIRE APPARAITRE OU DISPARAITRE EN FONCTION DE L'ÉCRAN :
+  // ========================
+  .hidden-for-mobile {
+    display: none !important;
+  }
+
+  .display-for-mobile {
+    display: flex !important;
+  }
+}
+
+body {
+  .gallery-bloc {
+    &:has(#stywell) {
+      .cinematic {
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        left: 100%;
+        top: 0;
+        z-index: 9001;
+        opacity: 1;
+        border-block: $hundredpx solid var(--info);
+        background: var(--white);
+        color: var(--white);
+        font-family: "Courier New", Courier, monospace;
+
+        animation: cinematic-mode 1.5s forwards;
+      }
+    }
+  }
+}
+
+@keyframes cinematic-mode {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes cinematic-loader {
+  0% {
+    content: "7";
+  }
+
+  14% {
+    content: "6";
+  }
+
+  28% {
+    content: "5";
+  }
+
+  42% {
+    content: "4";
+  }
+
+  56% {
+    content: "3";
+  }
+
+  70% {
+    content: "2";
+  }
+
+  84% {
+    content: "1";
+  }
+
+  100% {
+    content: "";
+  }
+}

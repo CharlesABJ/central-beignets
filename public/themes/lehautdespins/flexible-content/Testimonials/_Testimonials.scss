@@ -1,0 +1,16 @@
+// testimonials | Témoignages
+.Testimonials {
+  background: var(--bg-color-dark);
+  color: var(--white-light);
+  .container-zone {
+    .label {
+      @include classic-label;
+    }
+    h2 {
+      @include classic-h2;
+      strong {
+        @include big-h2;
+      }
+    }
+  }
+}

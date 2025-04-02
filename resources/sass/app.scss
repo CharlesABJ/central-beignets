@@ -1,2 +1,25 @@
-@use "modules/_reset";
-@use "modules/_global";
+// Fichier d'entrée des styles de l'application
+
+// (1) Importation des fichiers d'initialisation du projet
+@import "init/_variables";
+@import "init/_fonts";
+@import "init/_reset";
+@import "init/_mixins";
+@import "init/_animations";
+@import "init/_signature";
+@import "init/_global";
+
+// Header et Footer
+@import "_header";
+@import "_footer";
+
+// (2) Importation des fichiers de styles des blocs flexibles
+@import "../../public/themes/lehautdespins/flexible-content/Call-to-action-button/_Call-to-action-button.scss";
+@import "../../public/themes/lehautdespins/flexible-content/Text-content/_Text-content.scss";
+@import "../../public/themes/lehautdespins/flexible-content/Scroll-gallery/_Scroll-gallery.scss";
+@import "../../public/themes/lehautdespins/flexible-content/Apartments-list/_Apartments-list.scss";
+@import "../../public/themes/lehautdespins/flexible-content/Partners-list/_Partners-list.scss";
+@import "../../public/themes/lehautdespins/flexible-content/Reansurance/_Reansurance.scss";
+@import "../../public/themes/lehautdespins/flexible-content/Testimonials/_Testimonials.scss";
+
+// (3) Importation des fichiers de styles des pages

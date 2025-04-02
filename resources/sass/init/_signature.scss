@@ -1,0 +1,49 @@
+/* Signature */
+
+.signature {
+  height: 26px;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.signature .signature-content {
+  display: inline-block;
+  font-size: 26px;
+  line-height: 26px;
+  letter-spacing: -4.5px;
+  font-family: "Monologue-Sequane", sans-serif;
+  margin: 0;
+  position: relative;
+}
+
+.signature .signature-content a {
+  color: inherit;
+  font: inherit;
+  text-decoration: inherit;
+  position: relative;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.signature .signature-content .site {
+  letter-spacing: 0;
+  font-family: "Poppins-Sequane", sans-serif;
+  font-size: 16px;
+  position: relative;
+  top: -5px;
+}
+
+.signature .signature-content .relever {
+  position: relative;
+  top: 26px;
+  transition: all 0.3s ease-out;
+  height: 100%;
+}
+
+.signature:hover .signature-content .relever,
+.signature:hover .signature-content {
+  top: 0;
+  letter-spacing: 0;
+}
