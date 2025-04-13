@@ -1,0 +1,94 @@
+// apartments_list | Liste des appartements
+.Apartments-list {
+  background: var(--white);
+  .container-zone.first {
+    padding-bottom: 0 !important;
+    .label {
+      @include classic-label;
+      color: var(--bg-color-classic);
+    }
+    h2 {
+      @include classic-h2;
+      color: var(--bg-color-dark);
+    }
+    .description {
+      color: var(--bg-color-classic);
+
+      strong {
+        font-weight: $weight-semibold;
+        color: var(--bg-color-dark);
+      }
+    }
+    .label,
+    h2,
+    .description {
+      max-width: 50%;
+    }
+  }
+  .container-zone.second {
+    padding-inline: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: calc(2 * $hundredpx + $fiftypx - $fourpx);
+    .apartments-list {
+      margin-top: calc($hundredpx + $fiftypx);
+      .apartment {
+        display: flex;
+        $icon-height: calc(2 * $hundredpx + $twenty-sevenpx);
+        gap: calc(144px / 2);
+        .cover {
+          width: 60%;
+          .cover-image {
+            @include big-radius;
+            overflow: hidden;
+            display: block;
+            position: relative;
+            width: calc(100% - $icon-height / 2);
+            height: calc(4 * $hundredpx + $seventypx);
+            margin-left: auto;
+          }
+          .icon {
+            @include classic-radius;
+            @include classic-flex-center;
+            background: var(--bg-color-classic);
+            overflow: hidden;
+            position: absolute;
+            width: $icon-height;
+            height: $icon-height;
+            top: calc($icon-height / -2.5);
+            left: 0;
+            z-index: 2;
+            img {
+              width: 78%;
+              height: 78%;
+            }
+          }
+        }
+        .content {
+          padding-left: calc(144px / 2);
+          position: relative;
+          width: 40%;
+          display: flex;
+          flex-direction: column;
+          gap: $fourteenpx;
+          .apartment-name {
+            @include mega-h2;
+            color: var(--bg-color-classic);
+          }
+          .apartment-description {
+            color: var(--bg-color-classic);
+          }
+          .split-button-self {
+            margin-top: auto;
+            width: 100%;
+            max-width: calc(5 * $hundredpx - $twenty-fourpx);
+          }
+          .illustration {
+            position: absolute;
+            right: 0;
+            color: var(--bg-color-classic);
+          }
+        }
+      }
+    }
+  }
+}

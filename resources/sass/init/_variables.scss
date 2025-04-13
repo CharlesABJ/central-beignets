@@ -62,23 +62,12 @@ $hundredpx: 6.25rem;
   --bg-original-dark: #9f1239;
   --bg-original-50: rgba(199, 71, 84, 0.5);
   --bg-original-disabled: #c74754;
-  --text-original-classic: var(--white);
+  --bg-original-special: #9f1239;
+  --text-original-classic: var(--white-light);
   --text-original-light: var(--white);
   --text-original-dark: var(--white);
   --text-original-50: var(--white);
   --text-original-disabled: var(--disabled);
-
-  /* Blue - Bleu  */
-  --bg-blue-classic: #6366f1;
-  --bg-blue-light: #a5b4fc;
-  --bg-blue-dark: #3730a3;
-  --bg-blue-50: rgba(99, 102, 241, 0.5);
-  --bg-blue-disabled: #6366f1;
-  --text-blue-classic: var(--white);
-  --text-blue-light: var(--white);
-  --text-blue-dark: var(--white);
-  --text-blue-50: var(--white);
-  --text-blue-disabled: var(--disabled);
 
   /* Red - Rouge */
   --bg-red-classic: #f43f5e;
@@ -86,7 +75,7 @@ $hundredpx: 6.25rem;
   --bg-red-dark: #9f1239;
   --bg-red-50: rgba(244, 63, 94, 0.5);
   --bg-red-disabled: #f43f5e;
-  --text-red-classic: var(--white);
+  --text-red-classic: var(--white-light);
   --text-red-light: var(--white);
   --text-red-dark: var(--white);
   --text-red-50: var(--white);
@@ -97,72 +86,134 @@ $hundredpx: 6.25rem;
   --bg-teal-light: #5eead4;
   --bg-teal-dark: #0f766e;
   --bg-teal-50: rgba(20, 184, 166, 0.5);
+  --bg-teal-special: #14b8a6;
   --bg-teal-disabled: #14b8a6;
-  --text-teal-classic: var(--white);
+  --text-teal-classic: var(--white-light);
   --text-teal-light: var(--white);
   --text-teal-dark: var(--white);
   --text-teal-50: var(--white);
   --text-teal-disabled: var(--disabled);
-
-  /* Yellow - Jaune */
-  --bg-yellow-classic: #eab308;
-  --bg-yellow-light: #facc15;
-  --bg-yellow-dark: #b45309;
-  --bg-yellow-50: rgba(234, 179, 8, 0.5);
-  --bg-yellow-disabled: #eab308;
-  --text-yellow-classic: var(--black);
-  --text-yellow-light: var(--black);
-  --text-yellow-dark: var(--black);
-  --text-yellow-50: var(--black);
-  --text-yellow-disabled: var(--disabled2);
 
   /* Purple - Violet */
   --bg-purple-classic: #8b5cf6;
   --bg-purple-light: #d8b4fe;
   --bg-purple-dark: #6b21a8;
   --bg-purple-50: rgba(139, 92, 246, 0.5);
+  --bg-purple-special: #8b5cf6;
   --bg-purple-disabled: #8b5cf6;
-  --text-purple-classic: var(--white);
+  --text-purple-classic: var(--white-light);
   --text-purple-light: var(--white);
   --text-purple-dark: var(--white);
   --text-purple-50: var(--white);
   --text-purple-disabled: var(--disabled);
 
-  /* Orange - Orange */
-  --bg-orange-classic: #f97316;
-  --bg-orange-light: #fdba74;
-  --bg-orange-dark: #c2410c;
-  --bg-orange-50: rgba(249, 115, 22, 0.5);
-  --bg-orange-disabled: #f97316;
-  --text-orange-classic: var(--black);
-  --text-orange-light: var(--black);
-  --text-orange-dark: var(--black);
-  --text-orange-50: var(--black);
-  --text-orange-disabled: var(--disabled2);
-
-  /* Green - Vert */
+  /* Green - Vert (printemps) */
   --bg-green-classic: #8f9b6c;
   --bg-green-light: #c6ccae;
   --bg-green-dark: #556043;
   --bg-green-50: #8f9b6cab;
+  --bg-green-special: #4d8244;
   --bg-green-disabled: #96bc96;
-  --text-green-classic: var(--white);
+  --text-green-classic: var(--white-light);
   --text-green-light: var(--white);
   --text-green-dark: var(--white);
   --text-green-50: var(--white);
   --text-green-disabled: var(--disabled);
 
+  /* Yellow - Jaune (été) */
+  --bg-yellow-classic: #f4c542;
+  --bg-yellow-light: #ffe28f;
+  --bg-yellow-dark: #c39c27;
+  --bg-yellow-50: #f4c542ab;
+  --bg-yellow-special: #f4c542;
+  --bg-yellow-disabled: #f6d87c;
+  --text-yellow-classic: var(--white-light);
+  --text-yellow-light: var(--black);
+  --text-yellow-dark: var(--white);
+  --text-yellow-50: var(--black);
+  --text-yellow-disabled: var(--disabled);
+
+  /* Orange - Orange (automne) */
+  --bg-orange-classic: #cea14e;
+  --bg-orange-light: #e6c98a;
+  --bg-orange-dark: #a37733;
+  --bg-orange-50: #cea14eab;
+  --bg-orange-special: #d8b973;
+  --bg-orange-disabled: #d8b973;
+  --text-orange-classic: var(--white-light);
+  --text-orange-light: var(--black);
+  --text-orange-dark: var(--white);
+  --text-orange-50: var(--black);
+  --text-orange-disabled: var(--disabled);
+
+  /* Blue - Bleu (hiver) */
+  --bg-blue-classic: #4f83a1;
+  --bg-blue-light: #8eb3cc;
+  --bg-blue-dark: #375c74;
+  --bg-blue-50: #4f83a1ab;
+  --bg-blue-special: #4f83a1;
+  --bg-blue-disabled: #7da1b8;
+  --text-blue-classic: var(--white-light);
+  --text-blue-light: var(--white);
+  --text-blue-dark: var(--white);
+  --text-blue-50: var(--white);
+  --text-blue-disabled: var(--disabled);
+
+  /* Stone - Pierre */
+  --bg-stone-classic: #c1bcb6;
+  --bg-stone-light: #e0dcd6;
+  --bg-stone-dark: #9c9892;
+  --bg-stone-50: #c1bcb6ab;
+  --bg-stone-special: #c1bcb6;
+  --bg-stone-disabled: #d2cdc7;
+  --text-stone-classic: var(--white-light);
+  --text-stone-light: var(--black);
+  --text-stone-dark: var(--white);
+  --text-stone-50: var(--black);
+  --text-stone-disabled: var(--disabled);
+
+  /* Sand - Sable */
+  --bg-sand-classic: #d6cbb2;
+  --bg-sand-light: #f2ead7;
+  --bg-sand-dark: #b5a88e;
+  --bg-sand-50: #d6cbb2ab;
+  --bg-sand-disabled: #e5dcc8;
+  --text-sand-classic: var(--white-light);
+  --text-sand-light: var(--black);
+  --text-sand-dark: var(--white);
+  --text-sand-50: var(--black);
+  --text-sand-disabled: var(--disabled);
+
+  /* Plum - Prune */
+  --bg-plum-classic: #803b56;
+  --bg-plum-light: #a35f78;
+  --bg-plum-dark: #5c2a3c;
+  --bg-plum-50: #803b56ab;
+  --bg-plum-special: #803b56;
+  --bg-plum-disabled: #b37c91;
+  --text-plum-classic: var(--white-light);
+  --text-plum-light: var(--white);
+  --text-plum-dark: var(--white);
+  --text-plum-50: var(--white);
+  --text-plum-disabled: var(--disabled);
+
   /* ⚫ Couleurs Classiques */
   --black: #1f1f1f;
   --black-dark: #000;
-  --white: #f7f6f4;
+  --white: #f5f5f5;
   --white-light: #fff;
   --grey-1: #6b7280;
   --grey-2: #9ca3af;
-  --grey-3: #d1d5db;
+  --grey-3: #cacacb;
+  --grey-4: #e5e5e5;
+  --grey-5: #d1d5db;
   --grey-50: rgba(209, 213, 219, 0.5);
   --disabled: #ffffff80;
   --disabled-2: rgba(0, 0, 0, 0.3);
+
+  /* Couleurs du menu */
+  --menu-background: #fff;
+  --menu-color: #1f1f1f;
 
   /* ⚠️ Couleurs de statut */
   --alert: #ffcc00;
@@ -187,13 +238,30 @@ $hundredpx: 6.25rem;
 }
 
 /* 🌓 Mode Sombre */
-[data-theme="dark"] {
+[data-theme="dark"],
+[data-transparent="true"] {
   --body-bg-color: #111827;
   --body-text-color: #f1f1f1;
+  --bg-footer: #151517;
+
+  /* ⚫ Couleurs Classiques */
+  --black: #f5f5f5;
+  --black-dark: #fff;
+  --white: #222222;
+  --white-light: #000;
+  --grey-1: #6b7280;
+  --grey-2: #9ca3af;
+  --grey-3: #cacacb;
+  --grey-4: #2e2e2e;
+  --grey-5: #d1d5db;
+  --grey-50: rgba(209, 213, 219, 0.5);
+  --disabled: #ffffff80;
+  --disabled-2: rgba(0, 0, 0, 0.3);
+  --placeholder: #757575;
 
   /* Couleurs de bordure et d'ombre */
   --border-color: #374151;
-  --shadow-color: #1f2937;
+  --shadow-color: #0000004d;
 
   /* Ajustement léger des couleurs */
   --bg-blue-light: #818cf8;
@@ -204,26 +272,38 @@ $hundredpx: 6.25rem;
   --bg-orange-light: #fb923c;
   --bg-green-light: #16a34a;
 }
+[data-theme="dark"] {
+  /* Couleurs du menu */
+  --menu-background: #000;
+  --menu-color: #f5f5f5;
+}
 
 /* ✅ Mise à jour dynamique de la couleur principale */
 // Liste des couleurs disponibles
 $color-list: (
   // Original
   "original",
-  // Bleu
-  "blue",
   // Rouge
   "red",
   // Vert Cyan
   "teal",
-  // Jaune
-  "yellow",
   // Violet
   "purple",
+
+  // Vert
+  "green",
+  // Jaune
+  "yellow",
   // Orange
   "orange",
-  // Vert
-  "green"
+  // Bleu
+  "blue",
+  // Pierre
+  "stone",
+  // Sable
+  "sand",
+  // Prune
+  "plum"
 );
 
 // Génération automatique des classes [data-main-color="X"]
@@ -233,6 +313,7 @@ $color-list: (
     --bg-color-light: var(--bg-#{$color}-light);
     --bg-color-dark: var(--bg-#{$color}-dark);
     --bg-color-50: var(--bg-#{$color}-50);
+    --bg-color-special: var(--bg-#{$color}-special);
     --bg-color-disabled: var(--bg-#{$color}-disabled);
 
     --text-color-classic: var(--text-#{$color}-classic);
@@ -244,86 +325,86 @@ $color-list: (
 }
 
 $color-name-list: (
-  "bg-original",
-  "bg-original-light",
-  "bg-original-dark",
-  "bg-original-50",
-  "bg-original-disabled",
-  "text-original-classic",
-  "text-original-light",
-  "text-original-dark",
-  "text-original-50",
-  "text-original-disabled",
-  "bg-blue",
-  "bg-blue-light",
-  "bg-blue-dark",
-  "bg-blue-50",
-  "bg-blue-disabled",
-  "text-blue-classic",
-  "text-blue-light",
-  "text-blue-dark",
-  "text-blue-50",
-  "text-blue-disabled",
-  "bg-red",
-  "bg-red-light",
-  "bg-red-dark",
-  "bg-red-50",
-  "bg-red-disabled",
-  "text-red-classic",
-  "text-red-light",
-  "text-red-dark",
-  "text-red-50",
-  "text-red-disabled",
-  "bg-teal",
-  "bg-teal-light",
-  "bg-teal-dark",
-  "bg-teal-50",
-  "bg-teal-disabled",
-  "text-teal-classic",
-  "text-teal-light",
-  "text-teal-dark",
-  "text-teal-50",
-  "text-teal-disabled",
-  "bg-yellow",
-  "bg-yellow-light",
-  "bg-yellow-dark",
-  "bg-yellow-50",
-  "bg-yellow-disabled",
-  "text-yellow-classic",
-  "text-yellow-light",
-  "text-yellow-dark",
-  "text-yellow-50",
-  "text-yellow-disabled",
-  "bg-purple",
-  "bg-purple-light",
-  "bg-purple-dark",
-  "bg-purple-50",
-  "bg-purple-disabled",
-  "text-purple-classic",
-  "text-purple-light",
-  "text-purple-dark",
-  "text-purple-50",
-  "text-purple-disabled",
-  "bg-orange",
-  "bg-orange-light",
-  "bg-orange-dark",
-  "bg-orange-50",
-  "bg-orange-disabled",
-  "text-orange-classic",
-  "text-orange-light",
-  "text-orange-dark",
-  "text-orange-50",
-  "text-orange-disabled",
-  "bg-green",
-  "bg-green-light",
-  "bg-green-dark",
-  "bg-green-50",
-  "bg-green-disabled",
-  "text-green-classic",
-  "text-green-light",
-  "text-green-dark",
-  "text-green-50",
-  "text-green-disabled",
+  "original",
+  "original-light",
+  "original-dark",
+  "original-50",
+  "original-disabled",
+  "original-classic",
+  "original-light",
+  "original-dark",
+  "original-50",
+  "original-disabled",
+  "blue",
+  "blue-light",
+  "blue-dark",
+  "blue-50",
+  "blue-disabled",
+  "blue-classic",
+  "blue-light",
+  "blue-dark",
+  "blue-50",
+  "blue-disabled",
+  "red",
+  "red-light",
+  "red-dark",
+  "red-50",
+  "red-disabled",
+  "red-classic",
+  "red-light",
+  "red-dark",
+  "red-50",
+  "red-disabled",
+  "teal",
+  "teal-light",
+  "teal-dark",
+  "teal-50",
+  "teal-disabled",
+  "teal-classic",
+  "teal-light",
+  "teal-dark",
+  "teal-50",
+  "teal-disabled",
+  "yellow",
+  "yellow-light",
+  "yellow-dark",
+  "yellow-50",
+  "yellow-disabled",
+  "yellow-classic",
+  "yellow-light",
+  "yellow-dark",
+  "yellow-50",
+  "yellow-disabled",
+  "purple",
+  "purple-light",
+  "purple-dark",
+  "purple-50",
+  "purple-disabled",
+  "purple-classic",
+  "purple-light",
+  "purple-dark",
+  "purple-50",
+  "purple-disabled",
+  "orange",
+  "orange-light",
+  "orange-dark",
+  "orange-50",
+  "orange-disabled",
+  "orange-classic",
+  "orange-light",
+  "orange-dark",
+  "orange-50",
+  "orange-disabled",
+  "green",
+  "green-light",
+  "green-dark",
+  "green-50",
+  "green-disabled",
+  "green-classic",
+  "green-light",
+  "green-dark",
+  "green-50",
+  "green-disabled",
   "black",
   "black-dark",
   "white",
@@ -341,16 +422,16 @@ $color-name-list: (
   "info",
   "body-bg-color",
   "body-text-color" // Main colors
-  "bg-color-classic",
-  "bg-color-light",
-  "bg-color-dark",
-  "bg-color-50",
-  "bg-color-disabled",
-  "text-color-classic",
-  "text-color-light",
-  "text-color-dark",
-  "text-color-50",
-  "text-color-disabled"
+  "color-classic",
+  "color-light",
+  "color-dark",
+  "color-50",
+  "color-disabled",
+  "color-classic",
+  "color-light",
+  "color-dark",
+  "color-50",
+  "color-disabled"
 );
 
 $shadow: 0px 2px 5px 0px var(--shadow-color);
@@ -370,4 +451,5 @@ $weight-semibold: 600;
 $weight-medium: 500;
 $weight-regular: 400;
 $weight-light: 300;
+$weight-lighter: 200;
 $weight-thin: 100;

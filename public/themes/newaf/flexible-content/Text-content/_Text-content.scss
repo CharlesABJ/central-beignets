@@ -1,0 +1,34 @@
+// text_content | Contenu textuel
+.Text-content {
+  background: var(--bg-color-dark);
+  color: var(--white-light);
+  .container-zone {
+    .label {
+      @include classic-label;
+    }
+    .title {
+      @include classic-h2;
+    }
+    .content-zone {
+      &.one-column {
+        @include auto-grid(1, 1, 1, 1);
+      }
+      &.two-columns {
+        @include auto-grid(2, 2, 2, 1);
+      }
+      &.three-columns {
+        @include auto-grid(3, 3, 2, 1);
+      }
+      &.four-columns {
+        @include auto-grid(4, 4, 2, 1);
+      }
+      &.five-columns {
+        @include auto-grid(5, 4, 2, 1);
+      }
+      gap: $thirty-twopx;
+
+      .content-bloc {
+      }
+    }
+  }
+}

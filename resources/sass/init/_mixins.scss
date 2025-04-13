@@ -1,36 +1,87 @@
-@mixin classic-body-font-size {
-  font-size: $sixteenpx;
-  @media screen and (max-width: 1640px) {
-    font-size: $sixteenpx;
-  }
-  @media screen and (max-width: 1250px) {
-  }
-  @media screen and (max-width: 678px) {
-  }
-}
-
-@mixin classic-body {
-  @include classic-body-font-size;
-  background: var(--body-bg-color);
-  color: var(--body-text-color);
-}
-
 @mixin classic-section {
   padding-block: $hundredpx;
 }
-@mixin classic-h1-font-size {
-  font-size: $sixtypx;
+
+// BUTTON
+@mixin classic-button-font-size {
+  font-size: $twentypx;
   @media screen and (max-width: 1640px) {
-    font-size: $sixtypx;
+    font-size: $twentypx;
   }
   @media screen and (max-width: 1250px) {
-    font-size: calc($thirty-twopx - $twopx);
+    font-size: $twentypx;
   }
   @media screen and (max-width: 678px) {
-    font-size: calc($twenty-fivepx - $twopx);
+    font-size: $sixteenpx;
+  }
+}
+@mixin classic-button {
+  @include classic-button-font-size;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  font-weight: $weight-light;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  line-height: 27px;
+  border-radius: $fiftypx;
+  padding: $twelvepx $thirtypx;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+  &::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: -50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: -1;
+    transition: 0.4s ease-in-out;
+  }
+  &:hover {
+    text-decoration: none;
+    color: #222222;
+    &::after {
+      left: 50%;
+    }
   }
 }
 
+@mixin big-button-font-size {
+  font-size: $thirtypx;
+  @media screen and (max-width: 1640px) {
+    font-size: $thirtypx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $thirtypx;
+  }
+  @media screen and (max-width: 678px) {
+    font-size: $thirtypx;
+  }
+}
+@mixin big-button {
+  @include big-button-font-size;
+  text-decoration: none;
+  font-weight: $weight-lighter;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  line-height: 41px;
+  border-radius: $fiftypx;
+
+  padding: $twentypx;
+  cursor: pointer;
+  transition: 0.3s ease;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// LABEL
 @mixin classic-label-font-size {
   font-size: $twenty-threepx;
   @media screen and (max-width: 1640px) {
@@ -46,6 +97,8 @@
   @include classic-label-font-size;
   font-weight: $weight-thin;
   text-transform: uppercase;
+  letter-spacing: 0.69px;
+  line-height: 31px;
 }
 
 @mixin big-label-font-size {
@@ -61,8 +114,24 @@
 }
 @mixin big-label {
   @include big-label-font-size;
-  font-weight: $weight-light;
+  font-weight: $weight-semibold;
   text-transform: uppercase;
+  letter-spacing: 1.2px;
+  line-height: 82px;
+}
+
+// H1
+@mixin classic-h1-font-size {
+  font-size: $fourtypx;
+  @media screen and (max-width: 1640px) {
+    font-size: $fourtypx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $thirty-twopx;
+  }
+  @media screen and (max-width: 678px) {
+    font-size: calc($twenty-fivepx - $twopx);
+  }
 }
 
 @mixin classic-h1 {
@@ -70,6 +139,16 @@
   line-height: 56px;
   font-weight: $weight-bold;
   text-transform: uppercase;
+  @media screen and (max-width: 1640px) {
+  }
+  @media screen and (max-width: 1250px) {
+    line-height: 40px;
+    margin-bottom: $thirtypx;
+  }
+  @media screen and (max-width: 678px) {
+    line-height: 32px;
+    margin-bottom: $twenty-fourpx;
+  }
 }
 
 @mixin alternative-h1-font-size {
@@ -89,12 +168,9 @@
   font-weight: $weight-bold;
 }
 
-@mixin classic-h1-illustration {
-}
-
-//========================================================================
+// H2
 @mixin classic-h2-font-size {
-  font-size: $thirty-sixpx;
+  font-size: $fourtypx;
   @media screen and (max-width: 1640px) {
     font-size: $thirty-sixpx;
   }
@@ -106,10 +182,14 @@
 }
 @mixin classic-h2 {
   @include classic-h2-font-size;
-  line-height: 32px;
-  font-weight: $weight-bold;
+  letter-spacing: 1.2px;
+  line-height: 54px;
+  font-weight: $weight-semibold;
   margin-block: $sixteenpx;
   text-transform: uppercase;
+  strong {
+    @include big-h2;
+  }
 }
 
 @mixin alternative-h2-font-size {
@@ -127,6 +207,7 @@
 @mixin alternative-h2 {
   @include alternative-h2-font-size;
   line-height: 64px;
+  letter-spacing: 1.5px;
   font-weight: $weight-bold;
   margin-block: $sixteenpx;
   text-transform: uppercase;
@@ -152,16 +233,34 @@
   text-transform: uppercase;
 }
 
-@mixin classic-h2-illustration() {
+@mixin mega-h2-font-size {
+  font-size: $eightypx;
+  @media screen and (max-width: 1640px) {
+    font-size: $eightypx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $thirtypx;
+  }
+  @media screen and (max-width: 678px) {
+  }
 }
-//========================================================================
+@mixin mega-h2 {
+  @include mega-h2-font-size;
+  letter-spacing: 2.4px;
+  line-height: 95px;
+  font-weight: $weight-bold;
+  margin-block: $sixteenpx;
+  text-transform: uppercase;
+}
+
+// H3
 @mixin classic-h3-font-size {
   font-size: $twentypx;
   @media screen and (max-width: 1640px) {
     font-size: $twentypx;
   }
   @media screen and (max-width: 1250px) {
-    font-size: $twentypx;
+    font-size: $eighteenpx;
   }
   @media screen and (max-width: 678px) {
   }
@@ -173,7 +272,39 @@
   text-transform: uppercase;
 }
 
-@mixin classic-alternative-font-size {
+// BODY
+@mixin classic-body-font-size {
+  font-size: $twentypx;
+  @media screen and (max-width: 1640px) {
+    font-size: $eighteenpx;
+  }
+  @media screen and (max-width: 1250px) {
+  }
+  @media screen and (max-width: 678px) {
+    font-size: $sixteenpx;
+  }
+}
+@mixin classic-body {
+  @include classic-body-font-size;
+  background: var(--body-bg-color);
+  color: var(--body-text-color);
+  letter-spacing: 0.6px;
+  line-height: 27px;
+  font-weight: $weight-light;
+  strong {
+    font-weight: $weight-semibold;
+  }
+  @media screen and (max-width: 1640px) {
+    line-height: 27px;
+  }
+  @media screen and (max-width: 1250px) {
+    line-height: 25px;
+  }
+  @media screen and (max-width: 678px) {
+  }
+}
+
+@mixin alternative-body-font-size {
   font-size: $twentypx;
   @media screen and (max-width: 1640px) {
     font-size: $twentypx;
@@ -183,12 +314,12 @@
   @media screen and (max-width: 678px) {
   }
 }
-@mixin classic-alternative {
-  @include classic-alternative-font-size;
+@mixin alternative-body {
+  @include alternative-body-font-size;
   line-height: 24px;
 }
 
-@mixin big-alternative-font-size {
+@mixin big-body-font-size {
   font-size: $thirty-twopx;
   @media screen and (max-width: 1640px) {
     font-size: $thirtypx;
@@ -198,13 +329,18 @@
   @media screen and (max-width: 678px) {
   }
 }
-@mixin big-alternative {
-  @include big-alternative-font-size;
-  line-height: 32px;
+@mixin big-body {
+  @include big-body-font-size;
+  line-height: 24px;
+}
+
+@mixin classic-logo-font-size {
+  font-size: $twenty-fourpx;
 }
 
 @mixin classic-container {
   width: 100%;
+  height: 100%;
   margin: 0 auto;
   max-width: 1920px;
   @media screen and (max-width: 1640px) {
@@ -366,9 +502,23 @@
   }
 }
 
-@mixin classic-auto-grid($desktop-columns, $tablet-columns, $mobile-columns) {
+@mixin classic-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin auto-grid(
+  $big-screen-columns,
+  $desktop-columns,
+  $tablet-columns,
+  $mobile-columns
+) {
   display: grid;
-  grid-template-columns: repeat($desktop-columns, minmax(0, 1fr));
+  grid-template-columns: repeat($big-screen-columns, minmax(0, 1fr));
+  @media screen and (max-width: 1640px) {
+    grid-template-columns: repeat($desktop-columns, minmax(0, 1fr));
+  }
   @media screen and (max-width: 1250px) {
     grid-template-columns: repeat($tablet-columns, minmax(0, 1fr));
   }
@@ -378,21 +528,41 @@
 }
 
 @mixin section-margin-inline {
+  margin-inline: calc(2 * $hundredpx + $twenty-sixpx);
+  @media screen and (max-width: 1640px) {
+    margin-inline: calc($hundredpx + $fourtypx);
+  }
+  @media screen and (max-width: 1250px) {
+    margin-inline: calc($hundredpx + $fourtypx);
+  }
+  @media screen and (max-width: 678px) {
+    margin-inline: calc($hundredpx + $fourtypx);
+  }
 }
 
 @mixin section-margin-block {
+  margin-block: $hundredpx;
+  @media screen and (max-width: 1640px) {
+    margin-block: $hundredpx;
+  }
+  @media screen and (max-width: 1250px) {
+    margin-block: $hundredpx;
+  }
+  @media screen and (max-width: 678px) {
+    margin-block: $hundredpx;
+  }
 }
 
 @mixin section-padding-inline {
-  padding-inline: calc(2 * $hundredpx + $twenty-sixpx);
+  padding-inline: $fiftypx;
   @media screen and (max-width: 1640px) {
-    padding-inline: calc($hundredpx + $fourtypx);
+    padding-inline: $fiftypx;
   }
   @media screen and (max-width: 1250px) {
-    padding-inline: calc($hundredpx + $fourtypx);
+    padding-inline: $fiftypx;
   }
   @media screen and (max-width: 678px) {
-    padding-inline: calc($hundredpx + $fourtypx);
+    padding-inline: $sixteenpx;
   }
 }
 @mixin section-padding-block {
@@ -411,7 +581,46 @@
 @mixin classic-shadow {
 }
 
-@mixin big-radius($radius: $eightypx) {
+@mixin small-radius($radius: $sevenpx) {
+  border-radius: $radius;
+  @media screen and (max-width: 1640px) {
+    border-radius: $radius;
+  }
+  @media screen and (max-width: 1250px) {
+    border-radius: $radius;
+  }
+  @media screen and (max-width: 678px) {
+    border-radius: $radius;
+  }
+}
+
+@mixin classic-radius($radius: $twelvepx) {
+  border-radius: $radius;
+  @media screen and (max-width: 1640px) {
+    border-radius: $radius;
+  }
+  @media screen and (max-width: 1250px) {
+    border-radius: $radius;
+  }
+  @media screen and (max-width: 678px) {
+    border-radius: $radius;
+  }
+}
+
+@mixin big-radius($radius: $thirtypx) {
+  border-radius: $radius;
+  @media screen and (max-width: 1640px) {
+    border-radius: $radius;
+  }
+  @media screen and (max-width: 1250px) {
+    border-radius: $fiftypx;
+  }
+  @media screen and (max-width: 678px) {
+    border-radius: $fiftypx;
+  }
+}
+
+@mixin mega-radius($radius: $eightypx) {
   border-radius: $radius;
   @media screen and (max-width: 1640px) {
     border-radius: $radius;

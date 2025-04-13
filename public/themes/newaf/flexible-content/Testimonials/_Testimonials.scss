@@ -1,0 +1,112 @@
+// testimonials | Témoignages
+.Testimonials {
+  background: var(--bg-color-dark);
+  color: var(--white-light);
+  .container-zone {
+    .label {
+      @include classic-label;
+    }
+    h2 {
+      @include classic-h2;
+    }
+  }
+  .testimonialsSwiper {
+    .swiper-wrapper {
+      .testimonials-list {
+        margin-top: $hundredpx;
+        display: grid;
+        // grid-template-rows: repeat(3, minmax(0, 1fr));
+        // grid-auto-flow: column; // Direction d'empilement
+        // grid-auto-columns: calc(100% / 3 - $twentypx); // Taille d'une colonne
+        grid-template-columns: repeat(3, 1fr);
+        gap: $twentypx;
+
+        .accordion-item {
+          @include big-radius;
+          padding: $thirtypx;
+          color: var(--bg-color-classic);
+          grid-row: span 1;
+          height: max-content;
+          &:has([aria-expanded="true"]) {
+            display: flex;
+            flex-direction: column;
+            grid-row: span 2;
+            height: unset;
+          }
+          .accordion-header {
+            all: unset;
+            .accordion-button {
+              all: unset;
+              width: 100%;
+              display: flex;
+              align-items: center;
+              gap: $twentypx;
+              &::after {
+                content: none;
+              }
+              .icon {
+                @include small-radius;
+                background: var(--bg-color-classic);
+                width: calc($thirty-fivepx + $thirtypx);
+                height: calc($thirty-fivepx + $thirtypx);
+              }
+              .name-and-date {
+                display: flex;
+                flex-direction: column;
+                .name {
+                  text-transform: uppercase;
+                  font-weight: $weight-bold;
+                }
+                .date {
+                  font-weight: $weight-light;
+                }
+              }
+              .toggle {
+                background: var(--bg-color-classic);
+                height: $thirty-fourpx;
+                width: $thirty-fourpx;
+                border-radius: 50%;
+                margin-left: auto;
+                margin-bottom: auto;
+                cursor: pointer;
+                transition: 0.3s ease;
+                &:active {
+                  box-shadow: $shadow;
+                  filter: brightness(0.95);
+                  transform: scale(0.95);
+                }
+              }
+            }
+          }
+          .accordion-collapse {
+            margin-block: auto;
+            .accordion-body {
+              @include classic-limited-text(5);
+              padding: $tenpx 0 0;
+            }
+          }
+        }
+      }
+    }
+    .swiper-pagination {
+      margin-top: $sixtypx;
+      display: flex;
+      align-items: center;
+      gap: $eighteenpx;
+      .swiper-pagination-bullet {
+        opacity: 1;
+        margin: 0;
+        width: $eighteenpx;
+        height: $eighteenpx;
+        background: var(--bg-color-disabled);
+        &.swiper-pagination-bullet-active {
+          opacity: 1;
+          width: calc($eighteenpx + 4px);
+          height: calc($eighteenpx + 4px);
+          background: var(--bg-color-light);
+          border: 4px solid var(--bg-color-classic);
+        }
+      }
+    }
+  }
+}

@@ -1,21 +1,56 @@
 // Génération des classes pour background
 @each $color-name in $color-name-list {
   .bg-#{$color-name} {
-    background-color: var(--#{$color-name});
+    background-color: var(--bg-#{$color-name});
   }
 }
 
 // Génération des classes pour le texte
 @each $color-name in $color-name-list {
   .text-#{$color-name} {
-    color: var(--#{$color-name});
+    color: var(--text-#{$color-name});
   }
 }
 
 // Génération des classes pour border
 @each $color-name in $color-name-list {
   .border-#{$color-name} {
-    border-color: var(--#{$color-name});
+    border-color: var(--border-#{$color-name});
+  }
+}
+
+.logo {
+  @include classic-logo-font-size;
+  width: max-content;
+  position: relative;
+  display: flex;
+  gap: $fivepx;
+  text-transform: uppercase;
+  font-weight: $weight-medium;
+  transition: 0.3s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(70deg, var(--grey-1), var(--black-dark));
+    z-index: 1;
+    transition: 0.3s ease;
+  }
+  &:hover {
+    text-decoration: none;
+    gap: 0;
+    &::after {
+      width: 100%;
+    }
+  }
+}
+html {
+  &.menu-visible {
+    overflow: hidden;
   }
 }
 
@@ -24,18 +59,21 @@
 // ========================
 body {
   @include classic-body;
+  transition: background 0.7s ease-out, color 0.7s ease-out;
+
   > main {
     min-height: 60vh;
     > section {
+      transition: background 0.7s ease-out, color 0.7s ease-out;
       .container-zone {
         @include section-padding-inline;
         @include section-padding-block;
       }
     }
   }
-  > main section,
-  > header,
-  > footer {
+  section,
+  header,
+  footer {
     .container-zone {
       @include classic-container;
     }
@@ -130,7 +168,7 @@ h1 {
   &.has-title-illustration {
     .title-illustration {
       &.colored-bar {
-        @include classic-h1-illustration;
+        // @include classic-h1-illustration;
       }
     }
   }
@@ -175,7 +213,7 @@ h2 {
   &.has-title-illustration {
     &.classic-icon {
       .illustration {
-        @include classic-h2-illustration;
+        // @include classic-h2-illustration;
       }
     }
   }
@@ -272,6 +310,118 @@ ul {
     > li {
       &::before {
         all: unset; // Pour tout remettre à zéro
+      }
+    }
+  }
+}
+
+// ========================
+// BUTTON STYLE // ( Style des boutons )
+// ========================
+.button {
+  @include classic-button;
+}
+
+.split-button {
+  position: relative;
+  display: flex;
+  text-align: center;
+  user-select: none;
+  .button {
+    color: var(--white-light);
+    &.title {
+      position: relative;
+    }
+    &.link {
+      min-width: max-content;
+      width: calc(50% - ($eightypx / 2));
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+
+      &:first-of-type {
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &:nth-of-type(2) {
+        right: 50%;
+        transform: translate(50%, -50%);
+      }
+
+      &:hover {
+        opacity: 0.8 !important;
+      }
+    }
+  }
+  &:hover {
+    .button {
+      &.title {
+        opacity: 0;
+        cursor: default;
+      }
+      &.link {
+        opacity: 1;
+
+        &:first-of-type {
+          left: 0;
+          transform: translate(0%, -50%);
+        }
+        &:nth-of-type(2) {
+          right: 0;
+          transform: translate(0%, -50%);
+        }
+        &:active {
+          transform: translate(0%, -50%) scale(0.98);
+          filter: brightness(0.77);
+        }
+      }
+    }
+  }
+}
+
+.split-button-self {
+  position: relative;
+  .title {
+    @include classic-button;
+    width: max-content;
+  }
+  .link {
+    position: absolute;
+    top: 50%;
+    width: calc(50% - (($eightypx - $fourpx) / 2));
+    opacity: 0;
+    &:first-of-type {
+      left: 0;
+      transform: translate(0, -50%);
+    }
+    &:nth-of-type(2) {
+      right: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &:hover {
+    .title {
+      opacity: 0;
+    }
+    .link {
+      opacity: 1;
+
+      &:first-of-type {
+        left: 0;
+        transform: translate(0%, -50%);
+      }
+      &:nth-of-type(2) {
+        right: 0;
+        transform: translate(0%, -50%);
+      }
+      &:hover {
+        transform: translate(0%, -50%) scale(1.02);
+        filter: brightness(1.15);
+      }
+      &:active {
+        transform: translate(0%, -50%) scale(0.98);
+        filter: brightness(1);
+        box-shadow: $shadow;
       }
     }
   }
@@ -465,7 +615,7 @@ ul {
 // BLOC GRID DEDEPENDING ON THE NUMBER OF ELEMENTS // ( Diviser les blocs en plusieurs colonnes en fonction du nombre d'éléments )
 $nb-items-array: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 // @each $nb-items in $nb-items-array {
-//   @include classic-auto-grid($nb-items);
+//   @include auto-grid($nb-items);
 // }
 
 // ========================
@@ -827,72 +977,5 @@ $nb-items-array: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 
   .display-for-mobile {
     display: flex !important;
-  }
-}
-
-body {
-  .gallery-bloc {
-    &:has(#stywell) {
-      .cinematic {
-        overflow: hidden;
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        left: 100%;
-        top: 0;
-        z-index: 9001;
-        opacity: 1;
-        border-block: $hundredpx solid var(--info);
-        background: var(--white);
-        color: var(--white);
-        font-family: "Courier New", Courier, monospace;
-
-        animation: cinematic-mode 1.5s forwards;
-      }
-    }
-  }
-}
-
-@keyframes cinematic-mode {
-  0% {
-    left: 100%;
-  }
-
-  100% {
-    left: 0;
-  }
-}
-
-@keyframes cinematic-loader {
-  0% {
-    content: "7";
-  }
-
-  14% {
-    content: "6";
-  }
-
-  28% {
-    content: "5";
-  }
-
-  42% {
-    content: "4";
-  }
-
-  56% {
-    content: "3";
-  }
-
-  70% {
-    content: "2";
-  }
-
-  84% {
-    content: "1";
-  }
-
-  100% {
-    content: "";
   }
 }

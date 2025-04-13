@@ -13,13 +13,16 @@
 @import "_header";
 @import "_footer";
 
+// Search Form
+@import "_search-form";
+
 // (2) Importation des fichiers de styles des blocs flexibles
-@import "../../public/themes/lehautdespins/flexible-content/Call-to-action-button/_Call-to-action-button.scss";
-@import "../../public/themes/lehautdespins/flexible-content/Text-content/_Text-content.scss";
-@import "../../public/themes/lehautdespins/flexible-content/Scroll-gallery/_Scroll-gallery.scss";
-@import "../../public/themes/lehautdespins/flexible-content/Apartments-list/_Apartments-list.scss";
-@import "../../public/themes/lehautdespins/flexible-content/Partners-list/_Partners-list.scss";
-@import "../../public/themes/lehautdespins/flexible-content/Reansurance/_Reansurance.scss";
-@import "../../public/themes/lehautdespins/flexible-content/Testimonials/_Testimonials.scss";
+@import "../../public/themes/newaf/flexible-content/Call-to-action-button/_Call-to-action-button.scss";
+@import "../../public/themes/newaf/flexible-content/Text-content/_Text-content.scss";
+@import "../../public/themes/newaf/flexible-content/Scroll-gallery/_Scroll-gallery.scss";
+@import "../../public/themes/newaf/flexible-content/Apartments-list/_Apartments-list.scss";
+@import "../../public/themes/newaf/flexible-content/Partners-list/_Partners-list.scss";
+@import "../../public/themes/newaf/flexible-content/Reansurance/_Reansurance.scss";
+@import "../../public/themes/newaf/flexible-content/Testimonials/_Testimonials.scss";
 
 // (3) Importation des fichiers de styles des pages
