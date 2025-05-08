@@ -21,14 +21,24 @@
 
 .logo {
   @include classic-logo-font-size;
+  display: flex;
+  align-items: baseline;
   width: max-content;
   position: relative;
-  display: flex;
-  gap: $fivepx;
-  text-transform: uppercase;
-  font-weight: $weight-medium;
+  font-weight: $weight-bold;
+  color: var(--bg-color-dark);
+  text-decoration: none;
   transition: 0.3s ease;
-
+  user-select: none;
+  .dot {
+    position: relative;
+    display: block;
+    height: $fivepx;
+    width: $fivepx;
+    border-radius: 50%;
+    background: var(--bg-color-classic);
+    transition: 0.3s ease;
+  }
   &::after {
     content: "";
     position: absolute;
@@ -36,12 +46,21 @@
     height: 2px;
     bottom: -2px;
     left: 0;
-    background: linear-gradient(70deg, var(--grey-1), var(--black-dark));
+    background: linear-gradient(
+      70deg,
+      var(--bg-color-classic),
+      var(--bg-color-dark)
+    );
     z-index: 1;
     transition: 0.3s ease;
   }
   &:hover {
     text-decoration: none;
+    .dot {
+      transform: translateY(calc(($fivepx / 3 + $fivepx) * -1));
+    }
+  }
+  &:active {
     gap: 0;
     &::after {
       width: 100%;
@@ -57,17 +76,26 @@ html {
 // ========================
 // BODY STYLE
 // ========================
+.has-not-padding-top {
+  @media screen and (min-width: 678px) {
+    padding-top: 0 !important;
+  }
+}
 body {
   @include classic-body;
-  transition: background 0.7s ease-out, color 0.7s ease-out;
+  transition: background 0.3s ease-out, color 0.3s ease-out;
 
   > main {
     min-height: 60vh;
-    > section {
-      transition: background 0.7s ease-out, color 0.7s ease-out;
+    section {
+      transition: background 0.3s ease-out, color 0.3s ease-out;
       .container-zone {
         @include section-padding-inline;
         @include section-padding-block;
+        .button,
+        .rect-button {
+          transition: background 0.3s ease-out, color 0.3s ease-out;
+        }
       }
     }
   }
@@ -286,7 +314,7 @@ ul {
       top: 50%;
       transform: translateY(-50%);
       border-radius: 50%;
-      background-color: var(--info);
+      background-color: var(--black);
     }
   }
 
@@ -321,7 +349,9 @@ ul {
 .button {
   @include classic-button;
 }
-
+.rect-button {
+  @include rect-button;
+}
 .split-button {
   position: relative;
   display: flex;

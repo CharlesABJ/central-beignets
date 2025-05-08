@@ -1,4 +1,4 @@
-header {
+body > header {
   @include classic-flex-center;
   background: var(--white-light);
   color: var(--black);
@@ -15,323 +15,106 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    nav {
-      .toggle.is-menu-hidden {
-        display: flex;
-        flex-direction: column;
-        text-transform: uppercase;
-        margin-top: $sixteenpx;
-        cursor: pointer;
-        .burger {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          gap: $sevenpx;
-          margin-left: $twopx;
-          i {
-            display: block;
-            width: 80%;
-            height: 2px;
-            background: var(--black);
-            transition: width 0.3s ease-in, background 0.7s ease-out;
-          }
-        }
-        span {
-          font-size: small;
-        }
-        &:hover {
-          .burger {
-            i {
-              &:first-of-type {
-                width: 100%;
-              }
-              &:last-of-type {
-                width: 60%;
-              }
-            }
-          }
-          span {
-            opacity: 0.8;
-          }
-        }
-      }
-      .menu-container {
-        @include section-padding-inline;
-        gap: 3rem;
-        position: absolute;
-        inset: 0 -58%;
-        display: flex;
-        flex-direction: column;
-        width: 58%;
-        height: 100vh;
-        background: var(--menu-background);
-        color: var(--menu-color);
-        z-index: 0;
-        backdrop-filter: 2px;
-        text-transform: uppercase;
-        transition: 0.2s ease-in;
-        &.menu-visible {
-          inset: 0;
-        }
-        .toggle-container {
-          height: 5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          .toggle.is-menu-visible {
-            margin-top: $sixteenpx;
-            width: max-content;
-            text-transform: uppercase;
-            cursor: pointer;
-            .burger {
-              position: relative;
-              width: 100%;
-              display: flex;
-              flex-direction: column;
-              gap: $sevenpx;
-              margin-left: $twopx;
-              i {
-                position: absolute;
-                display: block;
-                width: 25px;
-                height: 2px;
-                background: var(--menu-color);
-                left: 20%;
-                transition: width 0.3s ease-in, background 0.7s ease-out,
-                  transform 0.3s ease-in;
-                &:first-of-type {
-                  transform: rotate(-40deg);
-                  top: -$eightpx;
-                }
-                &:last-of-type {
-                  transform: rotate(40deg);
-                  top: -$eightpx;
-                }
-              }
-            }
-            span {
-              font-size: small;
-            }
-            &:hover {
-              i {
-                &:first-of-type {
-                  transform: rotate(-34deg);
-                }
-                &:last-of-type {
-                  transform: rotate(34deg);
-                }
-              }
-              span {
-                opacity: 0.8;
-              }
-            }
-          }
-        }
-
-        .menu {
-          display: flex;
-          flex-direction: column;
-          gap: $sixteenpx;
-        }
-      }
-    }
     .logo {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      font-weight: $weight-bold;
     }
-
-    .search-user-cart {
+    nav {
       display: flex;
       align-items: center;
-      .user {
-        margin-inline: $twentypx;
-      }
-      .user,
-      .cart {
-        font-size: x-large;
-        cursor: pointer;
-      }
-    }
-  }
-}
-
-.header-banner {
-  position: relative;
-  .container-zone {
-    .text-content {
-      padding-inline: $ninetypx;
-      .label {
-        font-weight: $weight-light;
-      }
-      .title {
-        @include classic-h1;
-        max-width: 90%;
-      }
-      .header-banner-buttons-zone {
+      gap: $thirty-twopx;
+      .main-menu {
         display: flex;
-        gap: $fivepx;
-        .button {
-          margin-top: $thirty-twopx;
-        }
-      }
-    }
-  }
-  &.has-header-banner-image {
-    max-height: 1080px;
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.2);
-      z-index: 1;
-    }
-    .container-zone {
-      position: relative;
-      .swiper-slide {
-        .text-content {
-          position: absolute;
-          top: 45%;
-          left: 0;
-          transform: translateY(-50%);
-          color: #fff;
-          max-width: 50%;
-          text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-          z-index: 6;
-          .button {
-            text-shadow: none;
+        gap: $thirty-twopx;
+        a {
+          font-weight: $weight-medium;
+          transition: 0.3s ease;
+
+          &:hover {
+            text-decoration: none;
+            color: var(--bg-color-classic);
+            opacity: 0.8;
           }
-        }
-        .header-banner-image {
-          width: 100%;
-          height: 100%;
-          user-select: none;
-        }
-      }
-    }
-
-    &.has-big-header-banner-image {
-      height: 100vh;
-    }
-
-    .swiper-pagination {
-      all: unset;
-      position: absolute;
-      left: 50%;
-      bottom: $twenty-fourpx;
-      transform: translateX(-50%);
-      z-index: 7;
-
-      .swiper-pagination-bullet {
-        background: white;
-        width: $fourteenpx;
-        height: $fourteenpx;
-      }
-    }
-  }
-}
-@media screen and (max-width: 1250px) {
-  header {
-    .container-zone {
-      nav {
-        .menu-container {
-          .toggle-container {
-            .toggle.is-menu-visible {
-              .burger {
-                i {
-                  &:first-of-type {
-                    transform: rotate(-42deg);
-                  }
-                  &:last-of-type {
-                    transform: rotate(42deg);
-                  }
-                }
-              }
-              &:hover {
-                .burger {
-                  i {
-                    &:first-of-type {
-                      transform: rotate(-38deg);
-                    }
-                    &:last-of-type {
-                      transform: rotate(38deg);
-                    }
-                  }
-                }
-              }
+          &[aria-current="page"] {
+            color: var(--bg-color-classic);
+            &:hover {
+              opacity: 1;
             }
           }
         }
       }
-      .search-user-cart {
-      }
-    }
-  }
-  .header-banner {
-    &.has-header-banner-image {
-      max-height: 700px;
-      .container-zone {
+      .order-now {
         position: relative;
-        .swiper-slide {
-          .text-content {
-            max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $thirty-twopx;
+        button {
+          position: relative;
+          font-size: medium;
+          border-radius: 0.4rem;
+          padding: $sevenpx $sixteenpx;
+          background: var(--bg-color-classic);
+          color: var(--white-light);
+          border: 1px solid transparent;
+          cursor: pointer;
+          z-index: 1;
+          transition: 0.3s ease;
+
+          i {
+            margin-right: $fivepx;
+            font-size: small;
+          }
+          &:hover {
+            background: var(--white-light);
+            color: var(--bg-color-classic);
+            border: 1px solid var(--bg-color-classic);
+          }
+        }
+        .choices {
+          position: absolute;
+          left: 0;
+          top: -50%;
+          display: flex;
+          flex-direction: column;
+          font-size: small;
+          opacity: 0;
+          background: color-mix(
+            in srgb,
+            var(--bg-color-light),
+            var(--white-light)
+          );
+          padding: $tenpx;
+          border-radius: 0.2rem;
+          &.active {
+            animation: fadeIn 0.3s linear forwards;
+            opacity: 1;
+          }
+          a {
+            display: flex;
+            align-items: center;
+            i {
+              margin-right: $fivepx;
+            }
+            &:hover {
+              text-decoration: none;
+            }
           }
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  body > header {
+    .container-zone {
     }
   }
 }
 
 @media (max-width: 678px) {
-  header {
+  body > header {
     .container-zone {
-      nav {
-        .menu-container {
-          inset: 0 -100%;
-          width: 100%;
-          .toggle-container {
-            .toggle.is-menu-visible {
-              .burger {
-                i {
-                  &:first-of-type {
-                    transform: rotate(-45deg);
-                  }
-                  &:last-of-type {
-                    transform: rotate(45deg);
-                  }
-                }
-              }
-              &:hover {
-                .burger {
-                  i {
-                    &:first-of-type {
-                      transform: rotate(-40deg);
-                    }
-                    &:last-of-type {
-                      transform: rotate(40deg);
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      .search-user-cart {
-        .search {
-          display: none;
-        }
-      }
-    }
-  }
-  .header-banner {
-    .container-zone {
-      .text-content {
-        padding-inline: $sixteenpx;
-      }
     }
   }
 }

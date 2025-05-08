@@ -57,12 +57,12 @@ $hundredpx: 6.25rem;
 // ========================
 :root {
   /* Original - Original  */
-  --bg-original-classic: #c74754;
-  --bg-original-light: #f8add4;
-  --bg-original-dark: #9f1239;
+  --bg-original-classic: #f97015;
+  --bg-original-light: #fef3c7;
+  --bg-original-dark: #c2410c;
   --bg-original-50: rgba(199, 71, 84, 0.5);
   --bg-original-disabled: #c74754;
-  --bg-original-special: #9f1239;
+  --bg-original-special: #ffedd5;
   --text-original-classic: var(--white-light);
   --text-original-light: var(--white);
   --text-original-dark: var(--white);
@@ -441,7 +441,7 @@ $shadow-hover: 0px 4px 8px 0px var(--shadow-color);
 // ========================
 
 // Font Family
-$font-base: "Roboto", sans-serif;
+$font-base: "Montserrat", sans-serif;
 $font-secondary: "Poppins", sans-serif;
 
 // Font Weight
