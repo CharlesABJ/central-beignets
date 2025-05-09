@@ -1,0 +1,70 @@
+// banner-header | Bannière d'en-tête
+.Banner-header {
+  background: var(--bg-color-light);
+  &.has-illustration {
+    background-image: url("/public/themes/central-beignets/illustrations/dot.svg");
+    background-size: 100px;
+    background-position: center;
+    background-repeat: repeat;
+  }
+  .container-zone {
+    padding-top: calc($hundredpx + $fiftypx);
+    position: relative;
+
+    &.has-big-banner {
+      @include auto-grid(2, 2, 1, 1);
+      .text-content {
+        display: flex;
+        flex-direction: column;
+        gap: $twenty-fivepx;
+        h1 {
+          @include big-h1;
+          max-width: 70%;
+          color: var(--bg-color-dark);
+          strong {
+            color: var(--bg-color-classic);
+          }
+        }
+        .description {
+          max-width: 85%;
+        }
+        .buttons-zone {
+          display: flex;
+          gap: $sixteenpx;
+          .rect-button {
+            background: var(--white-light);
+            &.has-order-button {
+              display: flex;
+              align-items: center;
+              border: none;
+              background: var(--bg-color-classic);
+              color: var(--white-light);
+              i {
+                margin-left: $tenpx;
+                transition: 0.3s ease-in-out;
+              }
+              &:hover {
+                background: var(--bg-color-dark);
+                color: var(--white-light);
+              }
+              &:active {
+                i {
+                  transform: translateX($tenpx);
+                }
+              }
+            }
+            &.default-button {
+              transition: border 0.3s ease-in-out, transform 0.2s ease;
+              &:hover {
+                border: 1px dotted var(--bg-color-classic);
+              }
+              &:active {
+                transform: scale(0.98);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

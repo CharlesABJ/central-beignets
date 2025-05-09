@@ -54,9 +54,11 @@
 
 @mixin rect-button {
   display: flex;
-  padding: $fivepx $thirteenpx;
-  border-radius: 4.5px;
+  padding: $twelvepx $twenty-fivepx;
+  border-radius: 5px;
   border: 1px solid var(--border-color);
+  line-height: normal;
+  font-weight: $weight-medium;
   &:hover {
     text-decoration: none;
   }
@@ -175,6 +177,18 @@
 @mixin alternative-h1 {
   @include alternative-h1-font-size;
   line-height: 38px;
+  font-weight: $weight-bold;
+}
+
+@mixin big-h1-font-size {
+  font-size: $sixtypx;
+  @media screen and (max-width: 1640px) {
+    font-size: $sixtypx;
+  }
+}
+@mixin big-h1 {
+  @include big-h1-font-size;
+  line-height: 64px;
   font-weight: $weight-bold;
 }
 

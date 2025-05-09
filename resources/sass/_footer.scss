@@ -1,84 +1,63 @@
 footer {
-  background: var(--white-light);
+  background: var(--bg-original-light);
+  transition: 0.2s ease-in;
   .container-zone {
+    @include section-padding-inline;
     display: flex;
     flex-direction: column;
     font-size: $fourteenpx;
-    padding: 0 $fiftypx;
 
     .top {
-      @include auto-grid(4, 4, 2, 1);
+      @include auto-grid(3, 3, 2, 1);
       padding-block: $fiftypx $thirty-twopx;
       gap: $thirty-twopx;
+      line-height: 1.5;
+      .logo-and-description {
+        .logo {
+          font-size: 1.3rem;
+          .dot {
+            height: $fourpx;
+            width: $fourpx;
+          }
+          &::after {
+            bottom: 0;
+          }
+          &:hover {
+            .dot {
+              transform: translateY(calc(($fourpx / 3 + $fourpx) * -1));
+            }
+          }
+        }
+        .description {
+          width: 80%;
+        }
+      }
       .logo,
       h3 {
         margin-bottom: $sixteenpx;
       }
-      .products,
-      .informations,
-      .contact {
+      i {
+        color: var(--bg-color-classic);
+        font-style: normal;
+      }
+      ul {
         display: flex;
         flex-direction: column;
-        ul {
-          display: flex;
-          flex-direction: column;
-          gap: $twelvepx;
-        }
-        .toggle-theme {
-          @include classic-flex-center;
-          @include small-radius;
-          margin-top: auto;
-          width: $thirtypx;
-          height: $thirtypx;
-          font-size: small;
-          cursor: pointer;
-          background: var(--black);
-          color: var(--white-light);
-          transition: 0.7s ease-out;
-          .fa-sun {
-            display: none;
-          }
-          &.is-dark {
-            transition: 0.7s ease-out;
-            .fa-moon {
-              display: none;
-            }
-            .fa-sun {
-              display: block;
+        gap: $fourteenpx;
+        li {
+          a {
+            &:hover {
+              color: var(--bg-color-classic);
+              text-decoration: none;
             }
           }
-          &:hover {
-            opacity: 0.8;
-            transform: rotate(7deg);
-            &.is-dark {
-              transform: rotate(-7deg);
-            }
-            &:active {
-              transform: rotate(-180deg);
-              &.is-dark {
-                transform: rotate(180deg);
-              }
-              transition: transform;
-              .fa-sun,
-              .fa-moon {
-                transform: rotate(180deg);
-              }
-            }
-          }
-        }
-      }
-      .social {
-        .social-networks {
-          display: flex;
-          font-size: $twentypx;
-          gap: $sixteenpx;
-          margin-top: $sixteenpx;
         }
       }
     }
     .bottom {
       padding-block: $thirty-twopx;
-      border-top: 1px solid var(--border-color);
+      border-top: 1px solid
+        color-mix(in srgb, var(--bg-color-classic), var(--white-light) 60%);
       text-align: center;
     }
   }

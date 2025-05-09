@@ -1,7 +1,10 @@
 <?php
 
 // Bouton d'appel à l'action || call_to_action_button
-if (get_row_layout() == 'call_to_action_button') :
+if (get_row_layout() == 'banner_header') :
+    require(locate_template('flexible-content/Banner-header/Banner-header.php'));
+
+elseif (get_row_layout() == 'call_to_action_button') :
     require(locate_template('flexible-content/Call-to-action-button/Call-to-action-button.php'));
 
 // Contenu textuel || text_content 

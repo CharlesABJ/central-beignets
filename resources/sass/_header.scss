@@ -1,6 +1,6 @@
 body > header {
   @include classic-flex-center;
-  background: var(--white-light);
+  background: rgba(255, 255, 255, 0.98);
   color: var(--black);
   backdrop-filter: blur(2px);
   position: fixed;
@@ -78,6 +78,7 @@ body > header {
           flex-direction: column;
           font-size: small;
           opacity: 0;
+          border: 1px solid var(--bg-color-classic);
           background: color-mix(
             in srgb,
             var(--bg-color-light),
@@ -92,8 +93,10 @@ body > header {
           a {
             display: flex;
             align-items: center;
+            color: var(--bg-color-dark);
             i {
               margin-right: $fivepx;
+              color: var(--bg-color-dark);
             }
             &:hover {
               text-decoration: none;
