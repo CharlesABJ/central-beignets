@@ -32,6 +32,14 @@
                 ]);
                 ?>
             </div>
+            <div class="legals-links">
+                <h3>Informations légales</h3>
+                <ul class="legals-links-menu has-not-ul-style">
+                    <li><a href="<?= home_url(); ?>/mentions-legales">Mentions légales</a></li>
+                    <li><a href="<?= home_url(); ?>/politique-de-confidentialite">Politique de confidentialité</a></li>
+                    <li><a href="<?= home_url(); ?>/cookies">Gestion des cookies</a></li>
+                </ul>
+            </div>
             <div class="contact-us">
                 <h3>Contactez-nous</h3>
                 <ul class="contact-info has-not-ul-style">

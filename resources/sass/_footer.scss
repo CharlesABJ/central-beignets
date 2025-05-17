@@ -8,7 +8,7 @@ footer {
     font-size: $fourteenpx;
 
     .top {
-      @include auto-grid(3, 3, 2, 1);
+      @include auto-grid(4, 4, 2, 1);
       padding-block: $fiftypx $thirty-twopx;
       gap: $thirty-twopx;
       line-height: 1.5;
