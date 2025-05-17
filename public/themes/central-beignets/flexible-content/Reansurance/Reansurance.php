@@ -8,6 +8,8 @@ $has_label = get_sub_field('has_label');
 $label = get_sub_field('label');
 $has_title = get_sub_field('has_title');
 $title = get_sub_field('title');
+$has_description = get_sub_field('has_description');
+$description = get_sub_field('description');
 $display_on_x_columns = get_sub_field('display_on_x_columns');
 ?>
 
@@ -19,6 +21,10 @@ $display_on_x_columns = get_sub_field('display_on_x_columns');
 
         <?php if ($has_title && $title) : ?>
             <h2><?= $title ?></h2>
+        <?php endif; ?>
+
+        <?php if ($has_description && $description) : ?>
+            <div class="description"><?= $description ?></div>
         <?php endif; ?>
 
         <?php if (have_rows('add_reansurance')) : ?>

@@ -1,7 +1,7 @@
 // Génération des classes pour background
 @each $color-name in $color-name-list {
   .bg-#{$color-name} {
-    background-color: var(--bg-#{$color-name});
+    background-color: var(--#{$color-name}) !important;
   }
 }
 

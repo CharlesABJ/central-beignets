@@ -1,0 +1,53 @@
+.Text-and-media {
+  .container-zone {
+    &.has-media {
+      display: flex;
+      gap: 3rem;
+
+      .text-content {
+        width: 50%;
+        .last {
+          display: flex;
+          gap: 0.5rem;
+          .logo {
+            color: inherit;
+            font-size: inherit;
+          }
+        }
+      }
+      .medias-zone {
+        width: 50%;
+        overflow: hidden;
+        border-radius: 1rem;
+        transition: 0.3s ease-in-out;
+        .media {
+          transform: scale(1.05);
+          transition: 0.3s ease-in-out;
+          img {
+            max-height: calc(5 * $hundredpx);
+          }
+        }
+        &:hover {
+          border-radius: 0;
+          .media {
+            transform: scale(1);
+          }
+        }
+      }
+      &.media-in-left {
+        flex-direction: row-reverse;
+        align-items: center;
+      }
+      &.media-in-right {
+        flex-direction: row;
+        align-items: center;
+      }
+      &.media-in-top {
+        flex-direction: column;
+      }
+      &.media-in-bottom {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+}

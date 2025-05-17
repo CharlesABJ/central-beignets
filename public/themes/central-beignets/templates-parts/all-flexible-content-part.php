@@ -11,13 +11,25 @@ elseif (get_row_layout() == 'call_to_action_button') :
 elseif (get_row_layout() == 'text_content') :
     require(locate_template('flexible-content/Text-content/Text-content.php'));
 
+// Notice || notice
+elseif (get_row_layout() == 'notice') :
+    require(locate_template('flexible-content/Notice/Notice.php'));
+
+// Contact || contact
+elseif (get_row_layout() == 'contact_bloc') :
+    require(locate_template('flexible-content/Contact-bloc/Contact-bloc.php'));
+
+// Texte et média || text_and_media
+elseif (get_row_layout() == 'text_and_media') :
+    require(locate_template('flexible-content/Text-and-media/Text-and-media.php'));
+
 // Galerie scrollable || scroll-gallery
 elseif (get_row_layout() == 'scroll_gallery') :
     require(locate_template('flexible-content/Scroll-gallery/Scroll-gallery.php'));
 
-// Liste des appartements || apartments_list
-elseif (get_row_layout() == 'apartments_list') :
-    require(locate_template('flexible-content/Apartments-list/Apartments-list.php'));
+// Liste des produits || products_list
+elseif (get_row_layout() == 'products_list') :
+    require(locate_template('flexible-content/Products-list/Products-list.php'));
 
 // Liste des partenaires || partners_list
 elseif (get_row_layout() == 'partners_list') :

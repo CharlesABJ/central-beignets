@@ -35,6 +35,7 @@ footer {
       .logo,
       h3 {
         margin-bottom: $sixteenpx;
+        user-select: none;
       }
       i {
         color: var(--bg-color-classic);
@@ -49,6 +50,12 @@ footer {
             &:hover {
               color: var(--bg-color-classic);
               text-decoration: none;
+            }
+          }
+          &.location {
+            &::selection {
+              background: var(--bg-color-classic);
+              color: var(--white-light);
             }
           }
         }

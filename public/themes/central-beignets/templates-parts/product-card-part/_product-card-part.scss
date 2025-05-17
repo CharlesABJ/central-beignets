@@ -1,0 +1,40 @@
+.product-card-part {
+  height: calc(3 * $hundredpx + $eightypx);
+  border-radius: 7px;
+  border: 1px solid
+    color-mix(in srgb, var(--bg-color-light), var(--white-light) 20%);
+  box-shadow: 0 0 5px 0 var(--shadow-color);
+  transition: 0.3s ease-in-out;
+
+  .cover {
+    border-radius: 7px 7px 0 0;
+    background: var(--bg-color-special);
+    height: 60%;
+  }
+  .content {
+    border-radius: 0 0 7px 7px;
+    height: 40%;
+    background: color-mix(in srgb, var(--white), var(--white-light) 60%);
+    padding: $twenty-fourpx;
+    .name-and-price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: $weight-semibold;
+      .product-name {
+      }
+      .product-price {
+        color: var(--bg-color-classic);
+      }
+    }
+    .product-description {
+      margin-top: $tenpx;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+  }
+  &:hover {
+    box-shadow: $shadow;
+    border-color: var(--bg-color-classic);
+  }
+}

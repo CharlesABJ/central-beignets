@@ -1,0 +1,47 @@
+// Products-list
+.Products-list {
+  .container-zone {
+    .label {
+    }
+
+    .title,
+    .description {
+      // max-width: 50%;
+      // margin-inline: auto;
+    }
+    .products-zone {
+      @include auto-grid(4, 4, 2, 1);
+      margin-top: $fiftypx;
+      gap: $thirty-twopx;
+    }
+    .more {
+      margin-top: $fiftypx;
+      text-align: center;
+      .rect-button {
+        position: relative;
+        margin: $twenty-fourpx auto;
+        background-color: var(--bg-color-classic);
+        overflow: hidden;
+        color: var(--white-light);
+        z-index: 1;
+
+        &:after {
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          background-color: var(--bg-color-dark);
+          top: 0;
+          left: -100%;
+          z-index: -1;
+          transition: 0.3s ease-in-out;
+        }
+        &:hover {
+          &:after {
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -60,9 +60,9 @@ $hundredpx: 6.25rem;
   --bg-original-classic: #f97015;
   --bg-original-light: #fef3c7;
   --bg-original-dark: #c2410c;
-  --bg-original-50: rgba(199, 71, 84, 0.5);
+  --bg-original-50: rgba(249, 112, 21, 0.2);
   --bg-original-disabled: #c74754;
-  --bg-original-special: #ffedd5;
+  --bg-original-special: #ffc2a3;
   --text-original-classic: var(--white-light);
   --text-original-light: var(--white);
   --text-original-dark: var(--white);
@@ -198,9 +198,9 @@ $hundredpx: 6.25rem;
   --text-plum-disabled: var(--disabled);
 
   /* ⚫ Couleurs Classiques */
-  --black: #1f1f1f;
+  --black: #38322e;
   --black-dark: #000;
-  --white: #f5f5f5;
+  --white: #fffaf4;
   --white-light: #fff;
   --grey-1: #6b7280;
   --grey-2: #9ca3af;
@@ -325,86 +325,86 @@ $color-list: (
 }
 
 $color-name-list: (
-  "original",
-  "original-light",
-  "original-dark",
-  "original-50",
-  "original-disabled",
-  "original-classic",
-  "original-light",
-  "original-dark",
-  "original-50",
-  "original-disabled",
-  "blue",
-  "blue-light",
-  "blue-dark",
-  "blue-50",
-  "blue-disabled",
-  "blue-classic",
-  "blue-light",
-  "blue-dark",
-  "blue-50",
-  "blue-disabled",
-  "red",
-  "red-light",
-  "red-dark",
-  "red-50",
-  "red-disabled",
-  "red-classic",
-  "red-light",
-  "red-dark",
-  "red-50",
-  "red-disabled",
-  "teal",
-  "teal-light",
-  "teal-dark",
-  "teal-50",
-  "teal-disabled",
-  "teal-classic",
-  "teal-light",
-  "teal-dark",
-  "teal-50",
-  "teal-disabled",
-  "yellow",
-  "yellow-light",
-  "yellow-dark",
-  "yellow-50",
-  "yellow-disabled",
-  "yellow-classic",
-  "yellow-light",
-  "yellow-dark",
-  "yellow-50",
-  "yellow-disabled",
-  "purple",
-  "purple-light",
-  "purple-dark",
-  "purple-50",
-  "purple-disabled",
-  "purple-classic",
-  "purple-light",
-  "purple-dark",
-  "purple-50",
-  "purple-disabled",
-  "orange",
-  "orange-light",
-  "orange-dark",
-  "orange-50",
-  "orange-disabled",
-  "orange-classic",
-  "orange-light",
-  "orange-dark",
-  "orange-50",
-  "orange-disabled",
-  "green",
-  "green-light",
-  "green-dark",
-  "green-50",
-  "green-disabled",
-  "green-classic",
-  "green-light",
-  "green-dark",
-  "green-50",
-  "green-disabled",
+  "bg-original",
+  "bg-original-light",
+  "bg-original-dark",
+  "bg-original-50",
+  "bg-original-disabled",
+  "text-original-classic",
+  "text-original-light",
+  "text-original-dark",
+  "text-original-50",
+  "text-original-disabled",
+  "bg-blue",
+  "bg-blue-light",
+  "bg-blue-dark",
+  "bg-blue-50",
+  "bg-blue-disabled",
+  "text-blue-classic",
+  "text-blue-light",
+  "text-blue-dark",
+  "text-blue-50",
+  "text-blue-disabled",
+  "bg-red",
+  "bg-red-light",
+  "bg-red-dark",
+  "bg-red-50",
+  "bg-red-disabled",
+  "text-red-classic",
+  "text-red-light",
+  "text-red-dark",
+  "text-red-50",
+  "text-red-disabled",
+  "bg-teal",
+  "bg-teal-light",
+  "bg-teal-dark",
+  "bg-teal-50",
+  "bg-teal-disabled",
+  "text-teal-classic",
+  "text-teal-light",
+  "text-teal-dark",
+  "text-teal-50",
+  "text-teal-disabled",
+  "bg-yellow",
+  "bg-yellow-light",
+  "bg-yellow-dark",
+  "bg-yellow-50",
+  "bg-yellow-disabled",
+  "text-yellow-classic",
+  "text-yellow-light",
+  "text-yellow-dark",
+  "text-yellow-50",
+  "text-yellow-disabled",
+  "bg-purple",
+  "bg-purple-light",
+  "bg-purple-dark",
+  "bg-purple-50",
+  "bg-purple-disabled",
+  "text-purple-classic",
+  "text-purple-light",
+  "text-purple-dark",
+  "text-purple-50",
+  "text-purple-disabled",
+  "bg-orange",
+  "bg-orange-light",
+  "bg-orange-dark",
+  "bg-orange-50",
+  "bg-orange-disabled",
+  "text-orange-classic",
+  "text-orange-light",
+  "text-orange-dark",
+  "text-orange-50",
+  "text-orange-disabled",
+  "bg-green",
+  "bg-green-light",
+  "bg-green-dark",
+  "bg-green-50",
+  "bg-green-disabled",
+  "text-green-classic",
+  "text-green-light",
+  "text-green-dark",
+  "text-green-50",
+  "text-green-disabled",
   "black",
   "black-dark",
   "white",
@@ -420,18 +420,20 @@ $color-name-list: (
   "success",
   "warning",
   "info",
+  "bg-white",
+  "bg-white-light",
   "body-bg-color",
   "body-text-color" // Main colors
-  "color-classic",
-  "color-light",
-  "color-dark",
-  "color-50",
-  "color-disabled",
-  "color-classic",
-  "color-light",
-  "color-dark",
-  "color-50",
-  "color-disabled"
+  "bg-color-classic",
+  "bg-color-light",
+  "bg-color-dark",
+  "bg-color-50",
+  "bg-color-disabled",
+  "text-color-classic",
+  "text-color-light",
+  "text-color-dark",
+  "text-color-50",
+  "text-color-disabled"
 );
 
 $shadow: 0px 2px 2px 0px var(--shadow-color);
@@ -441,8 +443,8 @@ $shadow-hover: 0px 4px 8px 0px var(--shadow-color);
 // ========================
 
 // Font Family
-$font-base: "Montserrat", sans-serif;
-$font-secondary: "Poppins", sans-serif;
+$font-base: "Inter", sans-serif;
+$font-secondary: "Montserrat", sans-serif;
 
 // Font Weight
 $weight-black: 900;

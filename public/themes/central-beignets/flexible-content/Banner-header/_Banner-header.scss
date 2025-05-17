@@ -2,18 +2,28 @@
 .Banner-header {
   background: var(--bg-color-light);
   &.has-illustration {
-    background-image: url("/public/themes/central-beignets/illustrations/dot.svg");
-    background-size: 100px;
-    background-position: center;
-    background-repeat: repeat;
+    background-image: url("/themes/central-beignets/illustrations/dot.svg");
   }
   .container-zone {
     padding-top: calc($hundredpx + $fiftypx);
     position: relative;
-
+    .text-content {
+      text-align: center;
+      width: 60%;
+      margin: 0 auto;
+      h1 {
+        color: var(--black-light);
+        strong {
+          font-weight: inherit;
+          color: var(--bg-color-classic);
+        }
+      }
+    }
     &.has-big-banner {
       @include auto-grid(2, 2, 1, 1);
       .text-content {
+        width: 100%;
+        text-align: left;
         display: flex;
         flex-direction: column;
         gap: $twenty-fivepx;
@@ -22,6 +32,7 @@
           max-width: 70%;
           color: var(--bg-color-dark);
           strong {
+            font-weight: inherit;
             color: var(--bg-color-classic);
           }
         }
@@ -54,15 +65,44 @@
               }
             }
             &.default-button {
-              transition: border 0.3s ease-in-out, transform 0.2s ease;
+              background: var(--white);
+              transition: border 0.3s ease-in-out, background 0.3s ease-in-out,
+                transform 0.2s ease, filter 0.2s ease;
               &:hover {
+                background: var(--white-light);
                 border: 1px dotted var(--bg-color-classic);
               }
               &:active {
+                filter: brightness(0.98);
                 transform: scale(0.98);
               }
             }
           }
+        }
+      }
+      .cover-images-zone {
+        @include flex-center;
+        position: relative;
+        z-index: 1;
+        &:before {
+          content: "";
+          position: absolute;
+          top: 45%;
+          left: 48%;
+          transform: translate(-50%, -50%);
+          width: 380px;
+          height: 380px;
+          background: var(--bg-color-50);
+          border-radius: 50%;
+          z-index: -1;
+        }
+        .cover-image {
+          background: var(--white-light);
+          width: 55%;
+          padding: $twenty-fivepx;
+          aspect-ratio: 1/1;
+
+          animation: float 5s ease-in-out infinite;
         }
       }
     }

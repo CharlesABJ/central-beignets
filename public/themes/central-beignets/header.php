@@ -5,6 +5,8 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/illustrations/favicon-1.png">
+
     <?php wp_head(); ?>
 </head>
 
@@ -29,7 +31,6 @@ $email = get_field('email', 'option');
         <div class="container-zone">
 
             <a href="<?= home_url(); ?>" class="logo">
-                <span class="blur"></span>
                 <?= $name; ?><span class="dot"></span>
             </a>
             <nav>
@@ -43,9 +44,15 @@ $email = get_field('email', 'option');
                 <div class="order-now">
                     <button href="<?= home_url(); ?>/commande"> <i class="fa-solid fa-cart-shopping"></i> Commander</button>
                     <div class="choices">
-                        <a href="tel:<?= $phone_france; ?>"> <i class="fa-solid fa-phone"></i><?= $phone_france; ?></a>
-                        <a href="tel:<?= $phone_suisse; ?>"> <i class="fa-solid fa-phone"></i><?= $phone_suisse; ?></a>
-                        <a href="mailto:contact@central-beignets.fr"> <i class="fa-solid fa-envelope"></i> contact@central-beignets.fr</a>
+                        <?php if ($phone_france) : ?>
+                            <a href="tel:<?= $phone_france; ?>">🇫🇷 <span><?= $phone_france; ?></span></a>
+                        <?php endif; ?>
+                        <?php if ($phone_suisse) : ?>
+                            <a href="tel:<?= $phone_suisse; ?>">🇨🇭 <span><?= $phone_suisse; ?></span></a>
+                        <?php endif; ?>
+                        <?php if ($email) : ?>
+                            <a href="mailto:<?= $email; ?>"> <i class="fa-solid fa-envelope"></i><span><?= $email; ?></span></a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </nav>

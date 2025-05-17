@@ -1,0 +1,41 @@
+# BEGIN SQ
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Redirige les URLs avec www vers la version sans www en HTTPS
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+# Redirige les URLs en HTTP vers HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Conditions spécifiques pour chaque extension de domaine
+# Pour .ch
+RewriteCond %{HTTP_HOST} \.ch$ [NC]
+RewriteCond %{REQUEST_URI} !^/ch/
+RewriteRule ^(.*)$ /ch/$1 [L]
+
+# Pour .fr
+RewriteCond %{HTTP_HOST} \.fr$ [NC]
+RewriteCond %{REQUEST_URI} !^/fr/
+RewriteRule ^(.*)$ /fr/$1 [L]
+
+# Pour .com
+RewriteCond %{HTTP_HOST} \.com$ [NC]
+RewriteCond %{REQUEST_URI} !^/com/
+RewriteRule ^(.*)$ /com/$1 [L]
+
+</IfModule>
+# END SQ
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^index\.php$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress 

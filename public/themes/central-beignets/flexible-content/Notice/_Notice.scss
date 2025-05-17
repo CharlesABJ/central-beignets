@@ -1,0 +1,25 @@
+.Notice {
+  background: var(--white-light);
+  .container-zone {
+    .notice-content {
+      width: max-content;
+      &.has-full-width {
+        width: 100%;
+      }
+      background: color-mix(
+        in srgb,
+        var(--bg-color-light),
+        var(--white-light) 50%
+      );
+      padding: $thirty-twopx;
+      h2 {
+        @include small-h2;
+        color: var(--bg-color-dark);
+      }
+      a {
+        color: var(--bg-color-classic);
+        font-weight: $weight-medium;
+      }
+    }
+  }
+}

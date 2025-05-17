@@ -1,23 +1,81 @@
 // call-to-action-button | Bouton d'appel à l'action
 .Call-to-action-button {
-  background: var(--white-light);
   .container-zone {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    .label {
-      @include classic-label;
-      color: var(--bg-color-classic);
-    }
-    h2 {
-      @include alternative-h2;
-      color: var(--bg-color-dark);
-    }
 
-    .split-button {
-      .title {
-        padding-inline: calc($hundredpx + $fiftypx);
+    .call-to-action-button {
+      width: 100%;
+      border-radius: 12px;
+      padding: $fiftypx;
+      background: linear-gradient(
+        to left,
+        var(--bg-color-dark),
+        var(--bg-color-classic)
+      );
+      color: var(--white-light);
+
+      h2 {
+        color: var(--white-light);
+        margin: 0;
+      }
+
+      .description {
+        color: var(--white-light);
+        font-weight: $weight-medium;
+      }
+
+      .button-zone {
+        margin: $fiftypx auto 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: $sixteenpx;
+        text-align: center;
+        .rect-button {
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+          transition: 0.3s ease;
+          &.has-order-button {
+            background: var(--white-light);
+            color: var(--bg-color-dark);
+            &:hover {
+              transform: scale(1.02);
+            }
+            &:active {
+              transform: scale(0.98);
+            }
+          }
+          &.default-button {
+            &::after {
+              content: "";
+              display: block;
+              width: 100%;
+              height: 100%;
+              background: var(--white-light);
+              position: absolute;
+              top: 100%;
+              left: 0;
+              z-index: -1;
+              transition: 0.3s ease;
+            }
+            &:hover {
+              color: var(--bg-color-dark);
+              &::after {
+                top: 0;
+              }
+            }
+            &:active {
+              color: var(--white-light);
+              &::after {
+                top: 100%;
+              }
+            }
+          }
+        }
       }
     }
   }

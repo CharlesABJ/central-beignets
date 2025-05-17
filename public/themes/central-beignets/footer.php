@@ -33,7 +33,7 @@
                 ?>
             </div>
             <div class="contact-us">
-                <h3>Contactez-moi</h3>
+                <h3>Contactez-nous</h3>
                 <ul class="contact-info has-not-ul-style">
                     <li class="location">
                         <i class="fa-solid fa-location-dot"></i>

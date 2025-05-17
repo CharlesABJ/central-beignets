@@ -12,8 +12,7 @@ add_action('after_setup_theme', function () {
 
   register_nav_menus([
     'main-menu' => 'Menu Principal',
-    'products-menu' => 'Menu Produits',
-    'informations-menu' => 'Menu Informations'
+    'quick-links-menu' => 'Liens utiles',
   ]);
 });
 
@@ -32,9 +31,9 @@ function sq_insert_css_in_head()
 
   if (
     wp_get_environment_type() === 'local' &&
-    is_array(wp_remote_get('http://localhost:5173/')) // is Vite.js running
+    is_array(wp_remote_get('http://localhost:5174/')) // is Vite.js running
   ) {
-    wp_enqueue_script('vite', 'http://localhost:5173/@vite/client', [], null);
+    wp_enqueue_script('vite', 'http://localhost:5174/@vite/client', [], null);
   } elseif (file_exists($manifestPath)) {
     $manifest = json_decode(file_get_contents($manifestPath), true);
 
@@ -56,9 +55,9 @@ function sq_insert_js_in_footer()
 
   if (
     wp_get_environment_type() === 'local' &&
-    is_array(wp_remote_get('http://localhost:5173/')) // is Vite.js running
+    is_array(wp_remote_get('http://localhost:5174/')) // is Vite.js running
   ) {
-    wp_enqueue_script('newaf/', 'http://localhost:5173/resources/js/index.js');
+    wp_enqueue_script('newaf/', 'http://localhost:5174/resources/js/index.js');
   } elseif (file_exists($manifestPath)) {
     $manifest = json_decode(file_get_contents($manifestPath), true);
     wp_enqueue_script('newaf/', get_theme_file_uri('assets/' . $manifest['resources/js/index.js']['file']));

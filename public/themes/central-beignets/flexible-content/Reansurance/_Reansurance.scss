@@ -2,41 +2,40 @@
 .Reansurance {
   background: var(--white-light);
   .container-zone {
-    .label {
-      @include big-label;
-      color: var(--bg-color-dark);
-    }
-    h2 {
-      @include big-h2;
-      color: var(--bg-color-dark);
-    }
     .reansurance-list {
       margin-top: calc($thirty-fivepx + $thirtypx);
       gap: $seventypx;
-      text-align: center;
-      &.one-column {
-        @include auto-grid(1, 1, 1, 1);
-      }
-      &.two-columns {
-        @include auto-grid(2, 2, 2, 1);
-      }
-      &.three-columns {
-        @include auto-grid(3, 3, 2, 1);
-      }
-      &.four-columns {
-        @include auto-grid(4, 4, 2, 1);
-      }
-      &.five-columns {
-        @include auto-grid(5, 4, 2, 1);
-      }
+      @include auto-grid(3, 3, 2, 1);
+
       .reansurance-item {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: $twentypx;
+        background: color-mix(var(--bg-color-light), var(--white-light), 30%);
+        padding: $twenty-fivepx;
+        border-radius: $tenpx;
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+        border: 1px solid
+          color-mix(var(--bg-color-light), var(--white-light), 50%);
+        transition: 0.3s ease;
         .icon {
           max-width: calc($thirty-fivepx + $thirtypx);
           height: calc($thirty-fivepx + $thirtypx);
+        }
+
+        .description {
+          strong {
+            @include classic-h3;
+            margin-bottom: $tenpx;
+          }
+        }
+
+        &:hover {
+          transform: translateY(-7px);
+          background: color-mix(var(--bg-color-light), var(--white-light), 60%);
+          box-shadow: 0 0 10px 0 var(--shadow-color);
+          border: 1px solid var(--bg-color-classic);
         }
       }
     }
