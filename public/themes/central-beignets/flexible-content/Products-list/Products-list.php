@@ -47,7 +47,6 @@ $more_content = get_sub_field('more_content');
                 )
             )
         );
-
         $products = new WP_Query($args);
         ?>
 
