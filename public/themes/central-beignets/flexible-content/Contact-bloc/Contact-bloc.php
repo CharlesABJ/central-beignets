@@ -71,7 +71,6 @@ $follow_us_description = get_sub_field('follow_us_description');
                                     <i class="fa-solid fa-envelope"></i>
                                 </span>
                                 <div class="text">
-                                    <span class="label">Email</span>
                                     <a href="mailto:<?= $email; ?>"><?= $email; ?></a>
                                 </div>
                             </li>
@@ -82,7 +81,6 @@ $follow_us_description = get_sub_field('follow_us_description');
                                     <i class="fa-solid fa-phone"></i>
                                 </span>
                                 <div class="text">
-                                    <span class="label">Téléphone</span>
                                     <a href="tel:<?= $phone_suisse; ?>"><?= $phone_suisse; ?></a>
                                 </div>
                             </li>
@@ -93,7 +91,6 @@ $follow_us_description = get_sub_field('follow_us_description');
                                     <i class="fa-solid fa-phone"></i>
                                 </span>
                                 <div class="text">
-                                    <span class="label">Téléphone</span>
                                     <a href="tel:<?= $phone_france; ?>"><?= $phone_france; ?></a>
                                 </div>
                             </li>
@@ -104,7 +101,6 @@ $follow_us_description = get_sub_field('follow_us_description');
                                     <i class="fa-solid fa-location-dot"></i>
                                 </span>
                                 <div class="text">
-                                    <span class="label">Adresse</span>
                                     <?= $location; ?>
                                 </div>
                             </li>

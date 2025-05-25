@@ -1,14 +1,14 @@
 .Contact-bloc {
   .container-zone {
     display: flex;
-    gap: 2rem;
+    gap: 5rem;
     padding-inline: calc(2.25 * $hundredpx);
     h2 {
       @include small-h2;
       color: var(--black);
     }
     .contact-forms-zone {
-      width: 50%;
+      width: 60%;
       .toggles-form-zone {
         display: flex;
         gap: 1rem;
@@ -17,6 +17,7 @@
           cursor: pointer;
           font-size: medium;
           font-weight: $weight-regular;
+          background: #fdeccd60;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -26,11 +27,17 @@
           border-radius: 7px;
           transition: 0.3s ease;
           &:hover {
-            background: color-mix(in srgb, var(--grey-3), var(--white) 70%);
+            background: color-mix(
+              in srgb,
+              #fdeccd60,
+              var(--bg-color-classic) 30%
+            );
+            color: var(--white);
             opacity: 0.7;
           }
           &.active {
-            background: var(--bg-color-special);
+            background: var(--bg-color-classic);
+            color: var(--white);
             opacity: 1;
           }
         }
@@ -40,7 +47,7 @@
           display: none;
           label {
             width: 100%;
-            font-weight: $weight-regular;
+            font-weight: $weight-medium;
             > span {
               display: block;
               width: 100%;
@@ -51,12 +58,51 @@
             border: 1px solid var(--grey-3);
             border-radius: 7px;
             padding: 0.5rem 1rem;
-            background: transparent;
+            background: var(--white-light);
             width: 100%;
+            outline-color: var(--bg-color-classic);
+            outline-offset: 3px;
+            outline-width: 2px;
+            transition: 0.3s ease;
+
             &.wpcf7-submit {
               background: var(--bg-color-classic);
               color: var(--white);
               border: none;
+            }
+          }
+          select {
+            border: 1px solid var(--grey-3);
+            border-radius: 7px;
+            padding: 0.5rem 1rem;
+            background: var(--white-light);
+            outline-color: var(--bg-color-classic);
+            outline-offset: 3px;
+            outline-width: 2px;
+            transition: 0.3s ease;
+          }
+          .wpcf7-not-valid-tip {
+            color: var(--bg-color-dark);
+          }
+          span {
+            &[data-name="your-products"] {
+              > span {
+                display: flex;
+                flex-direction: column;
+                > span {
+                  label {
+                    display: flex;
+                    flex-direction: row;
+                    font-weight: $weight-light;
+                    width: max-content;
+                    cursor: pointer;
+                    input {
+                      width: max-content;
+                      accent-color: var(--bg-color-dark);
+                    }
+                  }
+                }
+              }
             }
           }
           &.active {
@@ -67,16 +113,19 @@
       }
     }
     .infos-zone {
-      width: 50%;
+      width: 40%;
       display: flex;
       flex-direction: column;
       gap: 2rem;
       .details {
         .details-list {
+          display: flex;
+          flex-direction: column;
           font-size: $eighteenpx;
           padding: 1.5rem;
           background: var(--bg-color-light);
           border-radius: 7px;
+          gap: 1rem;
           li {
             display: flex;
             align-items: center;
@@ -98,11 +147,31 @@
                 font-weight: $weight-regular;
               }
               a {
-                color: var(--bg-color-classic);
+                transition: 0.3s ease;
+                &:hover {
+                  color: var(--bg-color-classic);
+                  text-decoration: none;
+                }
               }
             }
           }
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .Contact-bloc {
+    .container-zone {
+      flex-direction: column;
+      gap: 2rem;
+      padding-inline: 4rem;
+      .contact-forms-zone {
+        width: 100%;
+      }
+      .infos-zone {
+        width: 100%;
       }
     }
   }

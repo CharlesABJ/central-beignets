@@ -38,7 +38,7 @@ $display_on_x_columns = get_sub_field('display_on_x_columns');
                     <li class="reansurance-item">
                         <?php if ($icon) : ?>
                             <div class="icon">
-                                <?= wp_get_attachment_image($icon['ID'], 'full') ?>
+                                <?= $icon ?>
                             </div>
                         <?php endif; ?>
                         <?php if ($description) : ?>

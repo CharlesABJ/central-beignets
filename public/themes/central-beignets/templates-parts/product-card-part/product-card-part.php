@@ -1,4 +1,4 @@
-<div class="product-card-part">
+<div class="product-card-part <?= $has_available ? 'has-available' : 'has-not-available' ?>">
     <div class="cover">
         <?php if ($product_cover) : ?>
             <?= wp_get_attachment_image($product_cover['id'], 'medium') ?>

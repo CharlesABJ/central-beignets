@@ -1,5 +1,7 @@
 .product-card-part {
-  height: calc(3 * $hundredpx + $eightypx);
+  position: relative;
+  background: color-mix(in srgb, var(--white), var(--white-light) 60%);
+  min-height: calc(3 * $hundredpx + $eightypx);
   border-radius: 7px;
   border: 1px solid
     color-mix(in srgb, var(--bg-color-light), var(--white-light) 20%);
@@ -9,12 +11,13 @@
   .cover {
     border-radius: 7px 7px 0 0;
     background: var(--bg-color-special);
-    height: 60%;
+    height: calc(2 * $hundredpx + $thirtypx);
+    overflow: hidden;
+    user-select: none;
   }
   .content {
     border-radius: 0 0 7px 7px;
-    height: 40%;
-    background: color-mix(in srgb, var(--white), var(--white-light) 60%);
+    height: max-content;
     padding: $twenty-fourpx;
     .name-and-price {
       display: flex;
@@ -36,5 +39,24 @@
   &:hover {
     box-shadow: $shadow;
     border-color: var(--bg-color-classic);
+  }
+
+  &.has-not-available {
+    filter: grayscale(1);
+    &::before {
+      content: "Bientôt disponible !";
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: max-content;
+      border-radius: 3.5px;
+      padding: 0.5rem 1rem;
+      background: var(--white-light);
+    }
+    &:hover {
+      box-shadow: none;
+      border: 1px solid
+        color-mix(in srgb, var(--bg-color-light), var(--white-light) 20%);
+    }
   }
 }

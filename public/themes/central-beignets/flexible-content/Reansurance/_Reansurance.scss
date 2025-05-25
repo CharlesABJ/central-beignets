@@ -16,12 +16,13 @@
         padding: $twenty-fivepx;
         border-radius: $tenpx;
         box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
-        border: 1px solid
-          color-mix(var(--bg-color-light), var(--white-light), 50%);
+        border: 1px solid rgba(0, 0, 0, 0.1);
         transition: 0.3s ease;
         .icon {
-          max-width: calc($thirty-fivepx + $thirtypx);
-          height: calc($thirty-fivepx + $thirtypx);
+          font-size: $thirtypx;
+          margin-right: auto;
+          color: var(--bg-color-light);
+          transition: 0.3s ease;
         }
 
         .description {
@@ -36,7 +37,21 @@
           background: color-mix(var(--bg-color-light), var(--white-light), 60%);
           box-shadow: 0 0 10px 0 var(--shadow-color);
           border: 1px solid var(--bg-color-classic);
+
+          .icon {
+            color: var(--bg-color-classic);
+          }
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .Reansurance {
+    .container-zone {
+      .reansurance-list {
+        gap: $thirty-twopx;
       }
     }
   }
