@@ -56,3 +56,22 @@
     }
   }
 }
+
+@media screen and (max-width: 1250px) {
+  .Text-and-media {
+    .container-zone {
+      &.has-media {
+        .text-content,
+        .medias-zone {
+          width: 100%;
+        }
+        &.media-in-left {
+          flex-direction: column-reverse;
+        }
+        &.media-in-right {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

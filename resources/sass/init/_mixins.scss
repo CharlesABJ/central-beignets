@@ -186,15 +186,25 @@
   @media screen and (max-width: 1640px) {
     font-size: $sixtypx;
   }
+
+  @media screen and (max-width: 678px) {
+    font-size: $fourtypx;
+  }
 }
 @mixin big-h1 {
   @include big-h1-font-size;
   line-height: 64px;
   font-weight: $weight-bold;
+  @media screen and (max-width: 678px) {
+    line-height: 42px;
+  }
 }
 
 @mixin mega-h1-font-size {
   font-size: calc(2 * $hundredpx);
+  @media screen and (max-width: 678px) {
+    font-size: calc($hundredpx + $thirtypx);
+  }
 }
 @mixin mega-h1 {
   @include mega-h1-font-size;
@@ -226,6 +236,10 @@
   strong {
     font-weight: inherit;
     color: var(--black);
+  }
+
+  @media screen and (max-width: 678px) {
+    line-height: 35px;
   }
 }
 
@@ -661,7 +675,7 @@
     padding-block: $hundredpx;
   }
   @media screen and (max-width: 678px) {
-    padding-block: $hundredpx;
+    padding-block: $fiftypx;
   }
 }
 

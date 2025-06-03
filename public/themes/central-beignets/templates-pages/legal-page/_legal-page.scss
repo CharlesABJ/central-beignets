@@ -1,0 +1,176 @@
+main.legal-page {
+  @include section-padding-block;
+  @include section-padding-inline;
+  & {
+    background: color-mix(in srgb, var(--bg-color-light) 10%, #fff);
+  }
+
+  h1,
+  .legal-description {
+    margin: auto;
+    width: max-content;
+    max-width: 100%;
+  }
+  h2 {
+    @include classic-h1;
+    color: var(--bg-color-classic);
+    margin-bottom: $fourtypx;
+    text-align: center;
+  }
+  ul {
+    li {
+      &:before {
+        background: var(--bg-color-classic);
+      }
+    }
+  }
+  .legal-description {
+    p:not(:last-child) {
+      margin-bottom: $sixteenpx; // Utile pour champs WYSIWYG
+    }
+    & {
+      margin-block: $hundredpx;
+      width: 80%;
+      color: color-mix(in srgb, var(--bg-color-classic), var(--bg-color-dark));
+    }
+    a {
+      text-decoration: underline;
+      color: var(--bg-color-light);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      strong {
+        display: block;
+        margin-top: 1rem;
+      }
+      @media screen and (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  .accordion {
+    background: color-mix(in srgb, var(--bg-color-classic) 2%, #fff);
+    width: 80%;
+    margin: auto;
+    border-radius: $twelvepx;
+    border: 2px solid color-mix(in srgb, var(--bg-color-classic) 20%, #fff);
+    box-shadow: -5px 0 10px 0
+      color-mix(in srgb, var(--bg-color-classic) 20%, #fff);
+    padding: $thirty-twopx $fiftypx;
+    p:not(:last-child) {
+      margin-bottom: $sixteenpx; // Utile pour champs WYSIWYG
+    }
+    .accordion-item {
+      background: color-mix(in srgb, var(--bg-color-classic) 2%, #fff);
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid
+        color-mix(in srgb, var(--bg-color-classic) 20%, #fff);
+
+      ul {
+        list-style: unset;
+      }
+      .accordion-header {
+        .accordion-button {
+          @include alternative-body-font-size;
+          & {
+            position: relative;
+            color: var(--bg-color-classic);
+            padding: $sixteenpx;
+            padding-left: 0;
+            font-weight: $weight-semibold;
+            cursor: pointer;
+            background: inherit;
+          }
+
+          &:focus {
+            box-shadow: unset;
+          }
+          &:not(.collapsed) {
+            box-shadow: unset;
+            background: inherit;
+          }
+          &::after {
+            all: unset;
+          }
+          .arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: right;
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            right: $tenpx;
+            top: 50%;
+            transform: translateY(-50%);
+            transform-origin: center;
+            font-size: xx-large;
+            font-weight: $weight-regular;
+            transition: transform 0.3s ease;
+            svg {
+              height: max-content;
+              * {
+                fill: var(--bg-color-classic);
+              }
+            }
+          }
+          &:hover {
+            text-decoration: underline;
+          }
+          &.collapsed {
+            .arrow {
+              transform: translateY(-50%) rotate(90deg);
+            }
+          }
+        }
+      }
+      .accordion-body {
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  main.legal-page {
+    .legal-description {
+      width: 100%;
+      margin-block: $fiftypx $sixtypx;
+    }
+    .accordion {
+      width: unset;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main.legal-page {
+    padding-top: 7rem;
+    .legal-description {
+      margin-block: $thirtypx $fiftypx;
+      ul {
+        padding: 0;
+      }
+    }
+    .accordion {
+      padding: $sixteenpx;
+      border-radius: $sixpx;
+      .accordion-item {
+        .accordion-header {
+          .accordion-button {
+            width: 90%;
+            .arrow {
+              right: -1.375rem;
+            }
+          }
+        }
+        .accordion-body {
+          padding-inline: 0;
+        }
+      }
+    }
+  }
+}

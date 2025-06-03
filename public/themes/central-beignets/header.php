@@ -56,6 +56,10 @@ $email = get_field('email', 'option');
                     </div>
                 </div>
             </nav>
+            <div class="burger-menu">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-xmark"></i>
+            </div>
 
         </div>
 
