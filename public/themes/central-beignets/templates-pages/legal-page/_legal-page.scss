@@ -29,13 +29,13 @@ main.legal-page {
       margin-bottom: $sixteenpx; // Utile pour champs WYSIWYG
     }
     & {
-      margin-block: $hundredpx;
+      margin-block: $eightypx $sixtypx;
       width: 80%;
-      color: color-mix(in srgb, var(--bg-color-classic), var(--bg-color-dark));
+      color: var(--black);
     }
     a {
       text-decoration: underline;
-      color: var(--bg-color-light);
+      color: var(--bg-color-classic);
     }
 
     .grid-2 {
@@ -129,6 +129,7 @@ main.legal-page {
         }
       }
       .accordion-body {
+        padding-left: 0;
       }
     }
   }

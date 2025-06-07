@@ -37,7 +37,7 @@ function sq_insert_css_in_head()
   } elseif (file_exists($manifestPath)) {
     $manifest = json_decode(file_get_contents($manifestPath), true);
 
-    wp_enqueue_style('newaf/', get_theme_file_uri('assets/' . $manifest['resources/js/index.js']['css'][0]));
+    wp_enqueue_style('central-beignets/', get_theme_file_uri('assets/' . $manifest['resources/js/index.js']['css'][0]));
   }
 }
 
@@ -57,10 +57,10 @@ function sq_insert_js_in_footer()
     wp_get_environment_type() === 'local' &&
     is_array(wp_remote_get('http://localhost:5174/')) // is Vite.js running
   ) {
-    wp_enqueue_script('newaf/', 'http://localhost:5174/resources/js/index.js');
+    wp_enqueue_script('central-beignets/', 'http://localhost:5174/resources/js/index.js');
   } elseif (file_exists($manifestPath)) {
     $manifest = json_decode(file_get_contents($manifestPath), true);
-    wp_enqueue_script('newaf/', get_theme_file_uri('assets/' . $manifest['resources/js/index.js']['file']));
+    wp_enqueue_script('central-beignets/', get_theme_file_uri('assets/' . $manifest['resources/js/index.js']['file']));
   }
 }
 
@@ -69,7 +69,7 @@ add_action('wp_footer', 'sq_insert_js_in_footer', 10);
 
 // Load scripts as modules.
 add_filter('script_loader_tag', function (string $tag, string $handle, string $src) {
-  if (in_array($handle, ['vite', 'newaf/'])) {
+  if (in_array($handle, ['vite', 'central-beignets/'])) {
     return '<script type="module" src="' . esc_url($src) . '" defer></script>';
   }
 
